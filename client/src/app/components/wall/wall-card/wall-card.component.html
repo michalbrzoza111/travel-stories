@@ -33,9 +33,9 @@
         </div>
       </div>
       <div class="side-content">
-          <form (submit)="onCommentSubmit()">
-        <input type="text" placeholder="Add Comment..." [(ngModel)]="content" name="content">
-      </form>
+        <form (submit)="onCommentSubmit()" #commentForm="ngForm">
+          <input type="text" placeholder="Add Comment..." [(ngModel)]="content" name="content">
+        </form>
       </div>
     </div>
   </div>

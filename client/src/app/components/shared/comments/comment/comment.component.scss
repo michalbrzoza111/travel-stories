@@ -1,6 +1,7 @@
 @import "../../../../../sass/_variables.scss";
 
 :host {
+
   .comment {
     padding-bottom: $padding-xs;
   }
@@ -15,9 +16,13 @@
     align-items: center;
   }
 
+  .comment-content {
+    margin-left: $margin;
+    padding-left: $padding-sm;
+  }
   .comment-avatar {
-    width: 25px;
-    height: 25px;
+    width: 27px;
+    height: 27px;
   }
 
   .comment-user {

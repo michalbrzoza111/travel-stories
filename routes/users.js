@@ -67,7 +67,6 @@ router.post('/authenticate', (req, res, next) => {
 router.post('/:username', (req, res, next) => {
   const username = req.body.authorUsername;
   const post = req.body;
-  console.log(req.body);
 
   User.getUserByUsername(username, (err, user) => {
     // console.log(user)
@@ -88,7 +87,7 @@ router.post('/:username', (req, res, next) => {
 });
 
 //Post 'Post' comment
-router.post('/comments', (req, res, next) => {
+router.post('/wall/comments', (req, res, next) => {
 
   const username = req.body.postAuthorUsername;
   const postId = req.body.postId;

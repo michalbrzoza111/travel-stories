@@ -13,6 +13,7 @@ export class WallCardComponent implements OnInit {
   content;
   loggedUser;
   comment;
+  commentForm;
 
   constructor(private usersService: UsersService) { }
 
@@ -43,18 +44,26 @@ export class WallCardComponent implements OnInit {
       authorUsername: this.loggedUser.username,
     }
     this.uploadComment();
+    this.content='';
   }
 
   uploadComment() {
     this.usersService.addComment(this.comment).subscribe(data => {
       if (data.success) {
         // this.flashMessage.show('Comment added', { cssClass: 'alert-success', timeout: 3000 });
-        // this.updateUi();
+        this.updateUi();
       } else {
         // this.flashMessage.show('Something went wrong', { cssClass: 'alert-danger', timeout: 3000 });
       }
     });
   }
 
-
+  updateUi() {
+    this.user = this.usersService
+      .getUser(this.post.authorUsername)
+      .subscribe(user => {
+        this.user = user
+        this.post = this.user.posts.find(post => post._id === this.post._id);
+      });
+  }
 }

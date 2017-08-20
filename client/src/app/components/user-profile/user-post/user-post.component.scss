@@ -93,7 +93,7 @@
   }
 
   .side-comments {
-    overflow-y: scroll;
+    overflow-y: auto;
     margin-top: $margin-md;
     max-height: 100px;
     @media #{$medium-and-up} {

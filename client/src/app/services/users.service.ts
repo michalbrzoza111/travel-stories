@@ -51,7 +51,7 @@ addComment(comment) {
   console.log(comment)
   let headers = new Headers();
   headers.append('Content-Type', 'application/json');
-  let ep = this.prepEndpoint('users/comments');
+  let ep = this.prepEndpoint('users/wall/comments');
   return this.http.post(ep, comment, { headers: headers })
     .map(res => res.json());
 }
