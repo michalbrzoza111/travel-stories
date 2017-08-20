@@ -1012,7 +1012,7 @@ SettingsComponent = __decorate([
 /***/ "./src/app/components/shared/comments/comment/comment.component.html":
 /***/ (function(module, exports) {
 
-module.exports = "<div class=\"comment\">\r\n  <div class=\"comment-header\">\r\n    <a class=\"comment-image-link\">\r\n      <img src=\"{{user.avatar}}\" class=\"comment-avatar\">\r\n    </a>\r\n    <a class=\"comment-user\">{{user.name}}</a>\r\n    <!-- <span>{{comment.commentDate}}</span> -->\r\n  </div>\r\n  <div class=\"comment-content\">\r\n    {{comment.content}}\r\n  </div>\r\n</div>\r\n"
+module.exports = "<div class=\"comment\" *ngIf=\"comment && user\">\r\n  <div class=\"comment-header\">\r\n    <a class=\"comment-image-link\" *ngIf=\"user\">\r\n      <img src=\"{{user.avatar}}\" class=\"comment-avatar\">\r\n    </a>\r\n    <a class=\"comment-user\">{{user.name}}</a>\r\n    <!-- <span>{{comment.commentDate}}</span> -->\r\n  </div>\r\n  <div class=\"comment-content\">\r\n    {{comment.content}}\r\n  </div>\r\n</div>\r\n<div *ngIf=\"!comment && user\">\r\nloading\r\n</div>\r\n"
 
 /***/ }),
 
@@ -1328,7 +1328,7 @@ var _a;
 /***/ "./src/app/components/user-profile/user-post/user-post.component.html":
 /***/ (function(module, exports) {
 
-module.exports = "<div class=\"wrapper\">\r\n  <div class=\"post z-depth-5\" *ngIf=\"currentPost\">\r\n    <div class=\"post-image-wrapper\">\r\n      <img src=\"{{currentPost.imgUrl}}\" class=\"post-image\">\r\n    </div>\r\n    <div class=\"side\">\r\n      <div>\r\n        <div class=\"side-header\">\r\n          <div class=\"side-details-wrapper\">\r\n            <!-- <a [routerLink]=\"['/profile', post.authorID]\"> -->\r\n            <img src=\"{{user.avatar}}\" alt=\"\" class=\"side-image circle\">\r\n            <div class=\"side-details\">\r\n              <div> {{user.username}} </div>\r\n            </div>\r\n          </div>\r\n          <div class=\"side-date\"> {{currentPost.date | date }} </div>\r\n        </div>\r\n        <div *ngIf=\"currentPost.tags\" class=\"side-tags\">\r\n          <span *ngFor=\"let tag of currentPost.tags; let isLast=last\"> {{tag}} </span>\r\n        </div>\r\n        <div class=\"side-comments\">\r\n          <app-comments [post]=\"currentPost\"></app-comments>\r\n        </div>\r\n      </div>\r\n      <div class=\"side-content\">\r\n        <div class=\"side-socials\">\r\n          <i class=\"material-icons\"> favorite_border </i>\r\n          <i class=\"material-icons\"> comment </i>\r\n        </div>\r\n        Liczba polubień: {{currentPost.likes.length}}\r\n\r\n        <input type=\"text\" placeholder=\"Add Comment...\">\r\n      </div>\r\n    </div>\r\n  </div>\r\n</div>\r\n"
+module.exports = "<div class=\"wrapper\" *ngIf=\"user\">\r\n  <div class=\"post z-depth-5\" *ngIf=\"currentPost\">\r\n    <div class=\"post-image-wrapper\">\r\n      <img src=\"{{currentPost.imgUrl}}\" class=\"post-image\">\r\n    </div>\r\n    <div class=\"side\">\r\n      <div>\r\n        <div class=\"side-header\">\r\n          <div class=\"side-details-wrapper\">\r\n            <!-- <a [routerLink]=\"['/profile', post.authorID]\"> -->\r\n            <img src=\"{{user.avatar}}\" alt=\"\" class=\"side-image circle\">\r\n            <div class=\"side-details\">\r\n              <div> {{user.username}} </div>\r\n            </div>\r\n          </div>\r\n          <div class=\"side-date\"> {{currentPost.date | date }} </div>\r\n        </div>\r\n        <div *ngIf=\"currentPost.tags\" class=\"side-tags\">\r\n          <span *ngFor=\"let tag of currentPost.tags; let isLast=last\"> {{tag}} </span>\r\n        </div>\r\n        <div class=\"side-comments\">\r\n          <app-comments [post]=\"currentPost\"></app-comments>\r\n        </div>\r\n      </div>\r\n      <div class=\"side-content\">\r\n        <div class=\"side-socials\">\r\n          <i class=\"material-icons\"> favorite_border </i>\r\n          <i class=\"material-icons\"> comment </i>\r\n        </div>\r\n        Liczba polubień: {{currentPost.likes.length}}\r\n\r\n        <form (submit)=\"onCommentSubmit()\" #comment=\"ngForm\">\r\n          <input type=\"text\" placeholder=\"Add Comment...\" [(ngModel)]=\"content\" name=\"content\">\r\n        </form>\r\n      </div>\r\n    </div>\r\n  </div>\r\n</div>\r\n"
 
 /***/ }),
 
@@ -1368,11 +1368,9 @@ var __metadata = (this && this.__metadata) || function (k, v) {
     if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
 };
 
-// import { UserDataService } from "../user-data.service"
 
 
 var UserPostComponent = (function () {
-    // user;
     function UserPostComponent(usersService, route, router) {
         this.usersService = usersService;
         this.route = route;
@@ -1380,9 +1378,10 @@ var UserPostComponent = (function () {
     }
     UserPostComponent.prototype.ngOnInit = function () {
         this.getPostID();
-        this.getUserData();
+        this.getUser();
+        this.getLoggedUser();
     };
-    UserPostComponent.prototype.getUserData = function () {
+    UserPostComponent.prototype.getUser = function () {
         var _this = this;
         this.route.params
             .switchMap(function (params) {
@@ -1398,7 +1397,41 @@ var UserPostComponent = (function () {
         var _this = this;
         this.route.params.subscribe(function (params) {
             _this.currentPostID = params['postId'];
-            console.log(_this.currentPostID);
+        });
+    };
+    UserPostComponent.prototype.getLoggedUser = function () {
+        this.loggedUser = localStorage.getItem('user');
+        this.loggedUser = JSON.parse(this.loggedUser);
+    };
+    UserPostComponent.prototype.onCommentSubmit = function () {
+        this.comment = {
+            content: this.content,
+            postId: this.currentPost._id,
+            postAuthorUsername: this.user.username,
+            authorUsername: this.loggedUser.username,
+        };
+        this.uploadComment();
+        this.content = '';
+    };
+    UserPostComponent.prototype.uploadComment = function () {
+        var _this = this;
+        this.usersService.addComment(this.comment).subscribe(function (data) {
+            if (data.success) {
+                // this.flashMessage.show('Comment added', { cssClass: 'alert-success', timeout: 3000 });
+                _this.updateUi();
+            }
+            else {
+                // this.flashMessage.show('Something went wrong', { cssClass: 'alert-danger', timeout: 3000 });
+            }
+        });
+    };
+    UserPostComponent.prototype.updateUi = function () {
+        var _this = this;
+        this.user = this.usersService
+            .getUser(this.currentPost.authorUsername)
+            .subscribe(function (user) {
+            _this.user = user;
+            _this.currentPost = _this.user.posts.find(function (post) { return post._id === _this.currentPost._id; });
         });
     };
     return UserPostComponent;
@@ -1617,7 +1650,7 @@ var _a, _b, _c, _d, _e, _f, _g, _h, _j;
 /***/ "./src/app/components/wall/wall-card/wall-card.component.html":
 /***/ (function(module, exports) {
 
-module.exports = "\r\n<div class=\"wrapper\" *ngIf=\"user\">\r\n  <div class=\"post z-depth-5\" *ngIf=\"post\">\r\n    <div class=\"side-header\">\r\n      <div class=\"side-details-wrapper\">\r\n        <!-- <a [routerLink]=\"['/profile', post.authorID]\"> -->\r\n        <!-- -->\r\n        <a [routerLink]=\"['/', user.username]\"> <img src=\"{{user.avatar}}\" alt=\"\" class=\"side-image circle\"> </a>\r\n        <div class=\"side-details\">\r\n          <div> <a [routerLink]=\"['/', user.username]\">  {{user.username}} </a> </div>\r\n        </div>\r\n      </div>\r\n      <div class=\"side-date\"> {{post.date | date }} </div>\r\n    </div>\r\n    <div class=\"post-image-wrapper\">\r\n      <img src=\"{{post.imgUrl}}\" class=\"post-image\">\r\n    </div>\r\n    <div class=\"side\">\r\n      <div>\r\n        <div class=\"side-socials\">\r\n          <i class=\"material-icons\"> favorite_border </i>\r\n          <i class=\"material-icons\"> comment </i>\r\n        </div>\r\n        <div>\r\n          <!-- Liczba polubień: {{post.likesUsersIds.length}} -->\r\n        </div>\r\n\r\n        <div *ngIf=\"post.tags\" class=\"side-tags\">\r\n          <span *ngFor=\"let tag of post.tags; let isLast=last\"> {{tag}} </span>\r\n        </div>\r\n        <div class=\"side-comments\">\r\n          <app-comments [post]=\"post\"></app-comments>\r\n        </div>\r\n      </div>\r\n      <div class=\"side-content\">\r\n        <form (submit)=\"onCommentSubmit()\" #commentForm=\"ngForm\">\r\n          <input type=\"text\" placeholder=\"Add Comment...\" [(ngModel)]=\"content\" name=\"content\">\r\n        </form>\r\n      </div>\r\n    </div>\r\n  </div>\r\n</div>\r\n"
+module.exports = "\r\n<div class=\"wrapper\" *ngIf=\"user\">\r\n  <div class=\"post z-depth-5\" *ngIf=\"post\">\r\n    <div class=\"side-header\">\r\n      <div class=\"side-details-wrapper\">\r\n        <!-- <a [routerLink]=\"['/profile', post.authorID]\"> -->\r\n        <!-- -->\r\n        <a [routerLink]=\"['/', user.username]\"> <img src=\"{{user.avatar}}\" alt=\"\" class=\"side-image circle\"> </a>\r\n        <div class=\"side-details\">\r\n          <div> <a [routerLink]=\"['/', user.username]\">  {{user.username}} </a> </div>\r\n        </div>\r\n      </div>\r\n      <div class=\"side-date\"> {{post.date | date }} </div>\r\n    </div>\r\n    <div class=\"post-image-wrapper\">\r\n      <img src=\"{{post.imgUrl}}\" class=\"post-image\">\r\n    </div>\r\n    <div class=\"side\">\r\n      <div>\r\n        <div class=\"side-socials\">\r\n          <i (click)=\"onLikeSubmit()\" class=\"material-icons\"> favorite_border </i>\r\n          <i class=\"material-icons\"> comment </i>\r\n        </div>\r\n        <div>\r\n          <!-- Liczba polubień: {{post.likesUsersIds.length}} -->\r\n        </div>\r\n\r\n        <div *ngIf=\"post.tags\" class=\"side-tags\">\r\n          <span *ngFor=\"let tag of post.tags; let isLast=last\"> {{tag}} </span>\r\n        </div>\r\n        <div class=\"side-comments\">\r\n          <app-comments [post]=\"post\"></app-comments>\r\n        </div>\r\n      </div>\r\n      <div class=\"side-content\">\r\n        <form (submit)=\"onCommentSubmit()\" #commentForm=\"ngForm\">\r\n          <input type=\"text\" placeholder=\"Add Comment...\" [(ngModel)]=\"content\" name=\"content\">\r\n        </form>\r\n      </div>\r\n    </div>\r\n  </div>\r\n</div>\r\n"
 
 /***/ }),
 
@@ -1671,7 +1704,6 @@ var WallCardComponent = (function () {
             .getUser(this.post.authorUsername)
             .subscribe(function (user) {
             _this.user = user;
-            console.log(_this.user);
         });
     };
     WallCardComponent.prototype.getLoggedUser = function () {
@@ -1691,6 +1723,28 @@ var WallCardComponent = (function () {
     WallCardComponent.prototype.uploadComment = function () {
         var _this = this;
         this.usersService.addComment(this.comment).subscribe(function (data) {
+            if (data.success) {
+                // this.flashMessage.show('Comment added', { cssClass: 'alert-success', timeout: 3000 });
+                _this.updateUi();
+            }
+            else {
+                // this.flashMessage.show('Something went wrong', { cssClass: 'alert-danger', timeout: 3000 });
+            }
+        });
+    };
+    WallCardComponent.prototype.onLikeSubmit = function () {
+        //TODO check if like exist, if so then unlikne
+        //else
+        this.like = {
+            postId: this.post._id,
+            postAuthorUsername: this.user.username,
+            authorUsername: this.loggedUser.username,
+        };
+        this.uploadLike();
+    };
+    WallCardComponent.prototype.uploadLike = function () {
+        var _this = this;
+        this.usersService.addLike(this.like).subscribe(function (data) {
             if (data.success) {
                 // this.flashMessage.show('Comment added', { cssClass: 'alert-success', timeout: 3000 });
                 _this.updateUi();
@@ -2085,11 +2139,40 @@ var UsersService = (function () {
     };
     //Add new comment
     UsersService.prototype.addComment = function (comment) {
-        console.log(comment);
         var headers = new __WEBPACK_IMPORTED_MODULE_1__angular_http__["Headers"]();
         headers.append('Content-Type', 'application/json');
         var ep = this.prepEndpoint('users/wall/comments');
         return this.http.post(ep, comment, { headers: headers })
+            .map(function (res) { return res.json(); });
+    };
+    //Add comment from post directly
+    //TODO better, dry solution
+    UsersService.prototype.addCommentFromPost = function (comment) {
+        var username = comment.postAuthorUsername;
+        var postId = comment.postId;
+        var headers = new __WEBPACK_IMPORTED_MODULE_1__angular_http__["Headers"]();
+        headers.append('Content-Type', 'application/json');
+        var ep = this.prepEndpoint('users' + '/' + username + '/' + postId + '/' + 'comments');
+        return this.http.post(ep, comment, { headers: headers })
+            .map(function (res) { return res.json(); });
+    };
+    //Add new comment
+    UsersService.prototype.addLike = function (like) {
+        var headers = new __WEBPACK_IMPORTED_MODULE_1__angular_http__["Headers"]();
+        headers.append('Content-Type', 'application/json');
+        var ep = this.prepEndpoint('users/wall/likes');
+        return this.http.post(ep, like, { headers: headers })
+            .map(function (res) { return res.json(); });
+    };
+    //Add like from post directly
+    //TODO better, dry solution
+    UsersService.prototype.addLikeFromPost = function (like) {
+        var username = like.postAuthorUsername;
+        var postId = like.postId;
+        var headers = new __WEBPACK_IMPORTED_MODULE_1__angular_http__["Headers"]();
+        headers.append('Content-Type', 'application/json');
+        var ep = this.prepEndpoint('users' + '/' + username + '/' + postId + '/' + 'likes');
+        return this.http.post(ep, like, { headers: headers })
             .map(function (res) { return res.json(); });
     };
     UsersService.prototype.loadToken = function () {

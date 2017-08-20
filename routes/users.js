@@ -92,7 +92,6 @@ router.post('/wall/comments', (req, res, next) => {
   const username = req.body.postAuthorUsername;
   const postId = req.body.postId;
   const comment = req.body;
-  console.log(req.body)
 
   User.getUserByUsername(username, (err, user) => {
       // console.log(user)
@@ -112,27 +111,85 @@ router.post('/wall/comments', (req, res, next) => {
   });
 });
 
-// Post 'Post' Like
-router.post('/likes', (req, res, next) => {
+//Post 'Post' comment from post directly
+//TODO better, dry solution
+
+router.post('/post/:username/:postId/comments', (req, res, next) => {
+  const username = req.body.postAuthorUsername;
+  const postId = req.body.postId;
+  const comment = req.body;
+
+  User.getUserByUsername(username, (err, user) => {
+      // console.log(user)
+      if(err) throw err;
+      if(!user){
+        return res.json({success: false, msg: 'User not found'});
+      }
+    let commentedUser = new User(user);
+
+    User.addComment(postId, comment, commentedUser, (err, user) => {
+      if(err){
+        res.json({success: false, msg:'Failed to add post'});
+      } else {
+        res.json({success: true, msg:'Post added'});
+      }
+    });
+  });
+});
+
+
+//Post 'Post' like
+router.post('/wall/likes', (req, res, next) => {
+
   const username = req.body.postAuthorUsername;
   const postId = req.body.postId;
   const like = req.body;
 
   User.getUserByUsername(username, (err, user) => {
+      // console.log(user)
       if(err) throw err;
       if(!user){
         return res.json({success: false, msg: 'User not found'});
       }
     let likedUser = new User(user);
+
     User.addLike(postId, like, likedUser, (err, user) => {
       if(err){
-        res.json({success: false, msg:'Failed to add like'});
+        res.json({success: false, msg:'Failed to add post'});
       } else {
-        res.json({success: true, msg:'Like added'});
+        res.json({success: true, msg:'Post added'});
       }
     });
   });
 });
+
+//Post 'Post' like from post directly
+//TODO better, dry solution
+
+router.post('/post/:username/:postId/likes', (req, res, next) => {
+  const username = req.body.postAuthorUsername;
+  const postId = req.body.postId;
+  const like = req.body;
+
+  User.getUserByUsername(username, (err, user) => {
+      // console.log(user)
+      if(err) throw err;
+      if(!user){
+        return res.json({success: false, msg: 'User not found'});
+      }
+    let likedUser = new User(user);
+
+    User.addLike(postId, like, likedUser, (err, user) => {
+      if(err){
+        res.json({success: false, msg:'Failed to add post'});
+      } else {
+        res.json({success: true, msg:'Post added'});
+      }
+    });
+  });
+});
+
+
 
 // Get Profile
 router.get('/profile', passport.authenticate('jwt', {session:false}), (req, res, next) => {

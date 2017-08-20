@@ -1,4 +1,3 @@
-
 import { Component, OnInit, Input } from '@angular/core';
 import { UsersService } from './../../../services/users.service';
 import { RouterModule, Routes } from '@angular/router';
@@ -13,8 +12,7 @@ export class WallCardComponent implements OnInit {
   content;
   loggedUser;
   comment;
-  commentForm;
-
+  like;
   constructor(private usersService: UsersService) { }
 
   ngOnInit() {
@@ -27,7 +25,6 @@ export class WallCardComponent implements OnInit {
       .getUser(this.post.authorUsername)
       .subscribe(user => {
         this.user = user
-            console.log(this.user)
       });
   }
 
@@ -49,6 +46,28 @@ export class WallCardComponent implements OnInit {
 
   uploadComment() {
     this.usersService.addComment(this.comment).subscribe(data => {
+      if (data.success) {
+        // this.flashMessage.show('Comment added', { cssClass: 'alert-success', timeout: 3000 });
+        this.updateUi();
+      } else {
+        // this.flashMessage.show('Something went wrong', { cssClass: 'alert-danger', timeout: 3000 });
+      }
+    });
+  }
+
+  onLikeSubmit() {
+    //TODO check if like exist, if so then unlikne
+    //else
+    this.like = {
+      postId: this.post._id,
+      postAuthorUsername: this.user.username,
+      authorUsername: this.loggedUser.username,
+    }
+    this.uploadLike();
+  }
+
+  uploadLike() {
+    this.usersService.addLike(this.like).subscribe(data => {
       if (data.success) {
         // this.flashMessage.show('Comment added', { cssClass: 'alert-success', timeout: 3000 });
         this.updateUi();

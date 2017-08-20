@@ -14,7 +14,7 @@ export class UsersService {
     this.isDev = true; // Change to false before deployment
   }
 
-//Get All Users
+  //Get All Users
   getUsers() {
     let headers = new Headers();
     this.loadToken();
@@ -35,7 +35,7 @@ export class UsersService {
       .map(res => res.json());
   }
 
-//Add New Post
+  //Add New Post
   addPost(post) {
     let username = post.authorUsername;
     let headers = new Headers();
@@ -45,16 +45,51 @@ export class UsersService {
       .map(res => res.json());
   }
 
-//Add new comment
+  //Add new comment
 
-addComment(comment) {
-  console.log(comment)
-  let headers = new Headers();
-  headers.append('Content-Type', 'application/json');
-  let ep = this.prepEndpoint('users/wall/comments');
-  return this.http.post(ep, comment, { headers: headers })
-    .map(res => res.json());
-}
+  addComment(comment) {
+    let headers = new Headers();
+    headers.append('Content-Type', 'application/json');
+    let ep = this.prepEndpoint('users/wall/comments');
+    return this.http.post(ep, comment, { headers: headers })
+      .map(res => res.json());
+  }
+
+  //Add comment from post directly
+  //TODO better, dry solution
+
+  addCommentFromPost(comment) {
+    let username = comment.postAuthorUsername;
+    let postId = comment.postId;
+    let headers = new Headers();
+    headers.append('Content-Type', 'application/json');
+    let ep = this.prepEndpoint('users' + '/' + username + '/' + postId + '/' + 'comments');
+    return this.http.post(ep, comment, { headers: headers })
+      .map(res => res.json());
+  }
+
+  //Add new comment
+
+  addLike(like) {
+    let headers = new Headers();
+    headers.append('Content-Type', 'application/json');
+    let ep = this.prepEndpoint('users/wall/likes');
+    return this.http.post(ep, like, { headers: headers })
+      .map(res => res.json());
+  }
+
+  //Add like from post directly
+  //TODO better, dry solution
+
+  addLikeFromPost(like) {
+    let username = like.postAuthorUsername;
+    let postId = like.postId;
+    let headers = new Headers();
+    headers.append('Content-Type', 'application/json');
+    let ep = this.prepEndpoint('users' + '/' + username + '/' + postId + '/' + 'likes');
+    return this.http.post(ep, like, { headers: headers })
+      .map(res => res.json());
+  }
 
   loadToken() {
     const token = localStorage.getItem('id_token');

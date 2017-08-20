@@ -1,5 +1,4 @@
 import { Component, OnInit } from '@angular/core';
-// import { UserDataService } from "../user-data.service"
 import { Router, ActivatedRoute, Params, Data } from '@angular/router';
 import { UsersService } from './../../../services/users.service';
 
@@ -8,51 +7,82 @@ import { UsersService } from './../../../services/users.service';
   templateUrl: './user-post.component.html',
   styleUrls: ['./user-post.component.scss']
 })
+
 export class UserPostComponent implements OnInit {
-  currentPostIndex;
   currentPost;
   user;
   postsArray;
   currentUserID;
   currentPostID;
-  // user;
+  content;
+  loggedUser;
+  commentContent;
+  comment;
 
   constructor(
     private usersService: UsersService,
     private route: ActivatedRoute,
     private router: Router) {
-
   }
 
   ngOnInit() {
     this.getPostID();
-    this.getUserData();
-
-
+    this.getUser();
+    this.getLoggedUser();
   }
 
-  getUserData() {
+  getUser() {
     this.route.params
       .switchMap((params: Params) =>
         this.usersService.getUser(params['username'])
-
       )
-      // .subscribe(user => this.currentPost = user.posts.find(post => post.id === this.currentPostID))
       .subscribe(user => {
         this.user = user;
         this.postsArray = user.posts;
-        this.currentPost = this.postsArray.find(post => post._id === this.currentPostID );
-      }
-      )
+        this.currentPost = this.postsArray.find(post => post._id === this.currentPostID);
+      });
   }
-
 
   getPostID() {
     this.route.params.subscribe(params => {
-         this.currentPostID = params['postId'];
-             console.log(this.currentPostID)
-  })
-}
+      this.currentPostID = params['postId'];
+    })
+  }
 
+  getLoggedUser() {
+    this.loggedUser = localStorage.getItem('user');
+    this.loggedUser = JSON.parse(this.loggedUser);
+  }
+
+  onCommentSubmit() {
+    this.comment = {
+      content: this.content,
+      postId: this.currentPost._id,
+      postAuthorUsername: this.user.username,
+      authorUsername: this.loggedUser.username,
+    }
+    this.uploadComment();
+    this.content = '';
+  }
+
+  uploadComment() {
+    this.usersService.addComment(this.comment).subscribe(data => {
+      if (data.success) {
+        // this.flashMessage.show('Comment added', { cssClass: 'alert-success', timeout: 3000 });
+        this.updateUi();
+      } else {
+        // this.flashMessage.show('Something went wrong', { cssClass: 'alert-danger', timeout: 3000 });
+      }
+    });
+  }
+
+  updateUi() {
+    this.user = this.usersService
+      .getUser(this.currentPost.authorUsername)
+      .subscribe(user => {
+        this.user = user
+        this.currentPost = this.user.posts.find(post => post._id === this.currentPost._id);
+      });
+  }
 
 }

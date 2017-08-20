@@ -1,4 +1,4 @@
-<div class="wrapper">
+<div class="wrapper" *ngIf="user">
   <div class="post z-depth-5" *ngIf="currentPost">
     <div class="post-image-wrapper">
       <img src="{{currentPost.imgUrl}}" class="post-image">
@@ -29,7 +29,9 @@
         </div>
         Liczba polubień: {{currentPost.likes.length}}
 
-        <input type="text" placeholder="Add Comment...">
+        <form (submit)="onCommentSubmit()" #comment="ngForm">
+          <input type="text" placeholder="Add Comment..." [(ngModel)]="content" name="content">
+        </form>
       </div>
     </div>
   </div>

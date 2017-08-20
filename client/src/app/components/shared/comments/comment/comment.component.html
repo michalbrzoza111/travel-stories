@@ -1,6 +1,6 @@
-<div class="comment">
+<div class="comment" *ngIf="comment && user">
   <div class="comment-header">
-    <a class="comment-image-link">
+    <a class="comment-image-link" *ngIf="user">
       <img src="{{user.avatar}}" class="comment-avatar">
     </a>
     <a class="comment-user">{{user.name}}</a>
@@ -9,4 +9,7 @@
   <div class="comment-content">
     {{comment.content}}
   </div>
+</div>
+<div *ngIf="!comment && user">
+loading
 </div>
