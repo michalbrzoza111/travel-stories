@@ -1,0 +1,928 @@
+{
+  "posts": [
+    { "id": 1, "title": "json-server", "author": "typicode" }
+  ],
+  "users": [
+    {
+      "id": 0,
+      "name": "Bilbo Baggins",
+      "username": "baggins12",
+      "password": "password",
+      "email": "baggins12@gmail.com",
+      "phoneNumber": 601901523,
+      "avatar": "https://s-media-cache-ak0.pinimg.com/736x/48/6a/23/486a23930b742ce0779d8b3862e503fe.jpg",
+      "followersIds": [0, 4],
+      "followedUsersIds": [3, 6],
+      "posts":[
+        {
+            "date" : "May 15, 2014",
+            "author": "baggins12",
+            "authorID": 0,
+            "postID": "123",
+            "authorAvatar": "https://s-media-cache-ak0.pinimg.com/736x/48/6a/23/486a23930b742ce0779d8b3862e503fe.jpg",
+            "tags": ["#sun", "#dogs" ,"#sea"],
+            "imgUrl":"assets/posts/user0post0.jpeg",
+            "smallImgUrl":"assets/posts/user0post0small.jpeg",
+            "likesUsersIds": [2, 5],
+            "comments": [
+              {
+                "commentID": 1,
+                "commentDate": "July 15, 2015",
+                "commentContent":"Great Photo, Cheers from Poznan!",
+                "commentAuthorID": 5
+              },
+              {
+                "commentID": 2,
+                "commentDate": "July 15, 2015",
+                "commentContent":"Great Photo, Cheers from Poznan!",
+                "commentAuthorID": 5
+              },
+              {
+                "commentID": 3,
+                "commentDate": "July 15, 2015",
+                "commentContent":"Great Photo, Cheers from Poznan!",
+                "commentAuthorID": 5
+              },
+              {
+                "commentID": 4,
+                "commentDate": "July 15, 2015",
+                "commentContent":"Great Photo, Cheers from Poznan!",
+                "commentAuthorID": 5
+              },
+              {
+                "commentID": 5,
+                "commentDate": "July 14, 2015",
+                "commentContent":"Nice one!",
+                "commentAuthorID": 3
+              },
+              {
+                "commentID": 6,
+                "commentDate": "July 14, 2015",
+                "commentContent":"Nice one!",
+                "commentAuthorID": 3
+              },
+              {
+                "commentID": 7,
+                "commentDate": "July 14, 2015",
+                "commentContent":"Nice one!",
+                "commentAuthorID": 3
+              },
+              {
+                "commentID": 8,
+                "commentDate": "July 14, 2015",
+                "commentContent":"Nice one!",
+                "commentAuthorID": 3
+              },
+              {
+                "commentID": 9,
+                "commentDate": "July 14, 2015",
+                "commentContent":"Nice one!",
+                "commentAuthorID": 3
+              }
+            ]
+        },
+        {
+            "date" : "May 12, 2011",
+            "author": "baggins12",
+            "authorID": 0,
+            "postID": "156",
+            "authorAvatar": "https://s-media-cache-ak0.pinimg.com/736x/48/6a/23/486a23930b742ce0779d8b3862e503fe.jpg",
+            "tags": ["#beer", "#dogs" ,"#sea"],
+            "imgUrl":"assets/posts/user0post1.jpeg",
+            "smallImgUrl":"assets/posts/user0post1small.jpeg",
+            "likesUsersIds": [2, 5],
+            "comments": [
+              {
+                "commentID": 1,
+                "commentDate": "July 15, 2015",
+                "commentContent":"Great Photo, Cheers from Poznan!",
+                "commentAuthorID": 5
+              },
+              {
+                "commentID": 2,
+                "commentDate": "July 14, 2015",
+                "commentContent":"Nice one!",
+                "commentAuthorID": 3
+              }
+            ]
+        },
+        {
+            "date" : "May 12, 2019",
+            "author": "baggins12",
+            "authorID": 0,
+            "postID": "197",
+            "authorAvatar": "https://s-media-cache-ak0.pinimg.com/736x/48/6a/23/486a23930b742ce0779d8b3862e503fe.jpg",
+            "tags": ["#water", "#dogs" ,"#sea"],
+            "imgUrl":"assets/posts/user0post2.jpeg",
+            "smallImgUrl":"assets/posts/user0post2small.jpeg",
+            "likesUsersIds": [2, 5],
+            "comments": [
+              {
+                "commentID": 1,
+                "commentDate": "July 15, 2015",
+                "commentContent":"Great Photo, Cheers from Poznan!",
+                "commentAuthorID": 5
+              },
+              {
+                "commentID": 2,
+                "commentDate": "July 14, 2015",
+                "commentContent":"Nice one!",
+                "commentAuthorID": 3
+              }
+            ]
+        },
+        {
+            "date" : "May 12, 2016",
+            "author": "baggins12",
+            "authorID": 0,
+            "postID": "136",
+            "authorAvatar": "https://s-media-cache-ak0.pinimg.com/736x/48/6a/23/486a23930b742ce0779d8b3862e503fe.jpg",
+            "tags": ["#johndoe", "#dogs" ,"#sea"],
+            "imgUrl":"assets/posts/user0post3.jpeg",
+            "smallImgUrl":"assets/posts/user0post3small.jpeg",
+            "likesUsersIds": [2, 5],
+            "comments": [
+              {
+                "commentID": 1,
+                "commentDate": "July 15, 2015",
+                "commentContent":"Great Photo, Cheers from Poznan!",
+                "commentAuthorID": 5
+              },
+              {
+                "commentID": 2,
+                "commentDate": "July 14, 2015",
+                "commentContent":"Nice one!",
+                "commentAuthorID": 3
+              }
+            ]
+        },
+        {
+            "date" : "May 12, 2014",
+            "author": "baggins12",
+            "authorID": 0,
+            "postID": "756",
+            "authorAvatar": "https://s-media-cache-ak0.pinimg.com/736x/48/6a/23/486a23930b742ce0779d8b3862e503fe.jpg",
+            "tags": ["#anything", "#dogs" ,"#sea"],
+            "imgUrl":"assets/posts/user0post4.jpeg",
+            "smallImgUrl":"assets/posts/user0post4small.jpeg",
+            "likesUsersIds": [2, 5],
+            "comments": [
+              {
+                "commentID": 1,
+                "commentDate": "July 15, 2015",
+                "commentContent":"Great Photo, Cheers from Poznan!",
+                "commentAuthorID": 5
+              },
+              {
+                "commentID": 2,
+                "commentDate": "July 14, 2015",
+                "commentContent":"Nice one!",
+                "commentAuthorID": 3
+              }
+            ]
+        },
+        {
+            "date" : "May 12, 2012",
+            "author": "baggins12",
+            "authorID": 0,
+            "postID": "456",
+            "authorAvatar": "https://s-media-cache-ak0.pinimg.com/736x/48/6a/23/486a23930b742ce0779d8b3862e503fe.jpg",
+            "tags": ["#clouds", "#dogs" ,"#sea"],
+            "imgUrl":"assets/posts/user0post5.jpeg",
+            "smallImgUrl":"assets/posts/user0post5small.jpeg",
+            "likesUsersIds": [2, 5],
+            "comments": [
+              {
+                "commentID": 1,
+                "commentDate": "July 15, 2015",
+                "commentContent":"Great Photo, Cheers from Poznan!",
+                "commentAuthorID": 5
+              },
+              {
+                "commentID": 2,
+                "commentDate": "July 14, 2015",
+                "commentContent":"Nice one!",
+                "commentAuthorID": 3
+              }
+            ]
+        }
+      ]
+    },
+    {
+      "id": 1,
+      "name": "Donald Tivoli",
+      "username": "tivoli26",
+      "password": "password",
+      "email": "tivoli111@gmail.com",
+      "phoneNumber": 601901501,
+      "avatar": "https://s3.amazonaws.com/uifaces/faces/twitter/jsa/128.jpg",
+      "followersIds": [0, 4],
+      "followedUsersIds": [3, 6],
+      "posts":[
+        {
+            "date" : "May 15, 2014",
+            "author": "tivoli26",
+            "authorID": 1,
+            "postID": "777",
+            "authorAvatar": "https://s3.amazonaws.com/uifaces/faces/twitter/jsa/128.jpg",
+            "tags": ["#sun", "#dogs" ,"#sea"],
+            "imgUrl":"assets/posts/user1post0.jpeg",
+            "smallImgUrl":"assets/posts/user1post0small.jpeg",
+            "likesUsersIds": [2, 5],
+            "comments": [
+              {
+                "commentID": 1,
+                "commentDate": "July 15, 2015",
+                "commentContent":"Great Photo, Cheers from Poznan!",
+                "commentAuthorID": 5
+              },
+              {
+                "commentID": 2,
+                "commentDate": "July 14, 2015",
+                "commentContent":"Nice one!",
+                "commentAuthorID": 3
+              }
+            ]
+        },
+        {
+            "date" : "May 12, 2011",
+            "author": "tivoli26",
+            "authorID": 1,
+            "postID": "333",
+            "authorAvatar": "https://s3.amazonaws.com/uifaces/faces/twitter/jsa/128.jpg",
+            "tags": ["#beer", "#dogs" ,"#sea"],
+            "imgUrl":"assets/posts/user1post1.jpeg",
+            "smallImgUrl":"assets/posts/user1post1small.jpeg",
+            "likesUsersIds": [2, 5],
+            "comments": [
+              {
+                "commentID": 1,
+                "commentDate": "July 15, 2015",
+                "commentContent":"Great Photo, Cheers from Poznan!",
+                "commentAuthorID": 5
+              },
+              {
+                "commentID": 2,
+                "commentDate": "July 14, 2015",
+                "commentContent":"Nice one!",
+                "commentAuthorID": 3
+              }
+            ]
+        },
+        {
+            "date" : "May 12, 2019",
+            "author": "tivoli26",
+            "authorID": 1,
+            "postID": "564",
+            "authorAvatar": "https://s3.amazonaws.com/uifaces/faces/twitter/jsa/128.jpg",
+            "tags": ["#water", "#dogs" ,"#sea"],
+            "imgUrl":"assets/posts/user1post2.jpeg",
+            "smallImgUrl":"assets/posts/user1post2small.jpeg",
+            "likesUsersIds": [2, 5],
+            "comments": [
+              {
+                "commentID": 1,
+                "commentDate": "July 15, 2015",
+                "commentContent":"Great Photo, Cheers from Poznan!",
+                "commentAuthorID": 5
+              },
+              {
+                "commentID": 2,
+                "commentDate": "July 14, 2015",
+                "commentContent":"Nice one!",
+                "commentAuthorID": 3
+              }
+            ]
+        },
+        {
+            "date" : "May 12, 2016",
+            "author": "tivoli26",
+            "authorID": 1,
+            "postID": "655",
+            "authorAvatar": "https://s3.amazonaws.com/uifaces/faces/twitter/jsa/128.jpg",
+            "tags": ["#johndoe", "#dogs" ,"#sea"],
+            "imgUrl":"assets/posts/user1post3.jpeg",
+            "smallImgUrl":"assets/posts/user1post3small.jpeg",
+            "likesUsersIds": [2, 5],
+            "comments": [
+              {
+                "commentID": 1,
+                "commentDate": "July 15, 2015",
+                "commentContent":"Great Photo, Cheers from Poznan!",
+                "commentAuthorID": 5
+              },
+              {
+                "commentID": 2,
+                "commentDate": "July 14, 2015",
+                "commentContent":"Nice one!",
+                "commentAuthorID": 3
+              }
+            ]
+        },
+        {
+            "date" : "May 12, 2014",
+            "author": "tivoli26",
+            "authorID": 1,
+            "postID": "838",
+            "authorAvatar": "https://s3.amazonaws.com/uifaces/faces/twitter/jsa/128.jpg",
+            "tags": ["#anything", "#dogs" ,"#sea"],
+            "imgUrl":"assets/posts/user1post4.jpeg",
+            "smallImgUrl":"assets/posts/user1post4small.jpeg",
+            "likesUsersIds": [2, 5],
+            "comments": [
+              {
+                "commentID": 1,
+                "commentDate": "July 15, 2015",
+                "commentContent":"Great Photo, Cheers from Poznan!",
+                "commentAuthorID": 5
+              },
+              {
+                "commentID": 2,
+                "commentDate": "July 14, 2015",
+                "commentContent":"Nice one!",
+                "commentAuthorID": 3
+              }
+            ]
+        },
+        {
+            "date" : "May 12, 2012",
+            "author": "tivoli26",
+            "authorID": 1,
+            "postID": "837",
+            "authorAvatar": "https://s3.amazonaws.com/uifaces/faces/twitter/jsa/128.jpg",
+            "tags": ["#clouds", "#dogs" ,"#sea"],
+            "imgUrl":"assets/posts/user1post5.jpeg",
+            "smallImgUrl":"assets/posts/user1post5small.jpeg",
+            "likesUsersIds": [2, 5],
+            "comments": [
+              {
+                "commentID": 1,
+                "commentDate": "July 15, 2015",
+                "commentContent":"Great Photo, Cheers from Poznan!",
+                "commentAuthorID": 5
+              },
+              {
+                "commentID": 2,
+                "commentDate": "July 14, 2015",
+                "commentContent":"Nice one!",
+                "commentAuthorID": 3
+              }
+            ]
+        }
+      ]
+    },
+    {
+      "id": 2,
+      "name": "Jack Kelly",
+      "username": "kelly3333",
+      "password": "password",
+      "email": "kelly1234@gmail.com",
+      "phoneNumber": 601901501,
+      "avatar": "https://s3.amazonaws.com/uifaces/faces/twitter/sauro/128.jpg",
+      "followersIds": [0, 4],
+      "followedUsersIds": [3, 6],
+      "posts":[
+        {
+            "date" : "May 12, 2012",
+            "author": "kelly3333",
+            "authorID": 2,
+            "postID": "834",
+            "authorAvatar": "https://s3.amazonaws.com/uifaces/faces/twitter/sauro/128.jpg",
+            "tags": ["#sun", "#dogs" ,"#sea"],
+            "imgUrl":"assets/posts/user2post0.jpeg",
+            "smallImgUrl":"assets/posts/user2post0small.jpeg",
+            "likesUsersIds": [2, 5],
+            "comments": [
+              {
+                "commentID": 1,
+                "commentDate": "July 15, 2015",
+                "commentContent":"Great Photo, Cheers from Poznan!",
+                "commentAuthorID": 5
+              },
+              {
+                "commentID": 2,
+                "commentDate": "July 14, 2015",
+                "commentContent":"Nice one!",
+                "commentAuthorID": 3
+              }
+            ]
+        },
+        {
+            "date" : "May 12, 2019",
+            "author": "kelly3333",
+            "authorID": 2,
+            "postID": "831",
+            "authorAvatar": "https://s3.amazonaws.com/uifaces/faces/twitter/sauro/128.jpg",
+            "tags": ["#beer", "#dogs" ,"#sea"],
+            "imgUrl":"assets/posts/user2post1.jpeg",
+            "smallImgUrl":"assets/posts/user2post1small.jpeg",
+            "likesUsersIds": [2, 5],
+            "comments": [
+              {
+                "commentID": 1,
+                "commentDate": "July 15, 2015",
+                "commentContent":"Great Photo, Cheers from Poznan!",
+                "commentAuthorID": 5
+              },
+              {
+                "commentID": 2,
+                "commentDate": "July 14, 2015",
+                "commentContent":"Nice one!",
+                "commentAuthorID": 3
+              }
+            ]
+        },
+        {
+            "date" : "May 12, 2014",
+            "author": "kelly3333",
+            "authorID": 2,
+            "postID": "669",
+            "authorAvatar": "https://s3.amazonaws.com/uifaces/faces/twitter/sauro/128.jpg",
+            "tags": ["#water", "#dogs" ,"#sea"],
+            "imgUrl":"assets/posts/user2post2.jpeg",
+            "smallImgUrl":"assets/posts/user2post2small.jpeg",
+            "likesUsersIds": [2, 5],
+            "comments": [
+              {
+                "commentID": 1,
+                "commentDate": "July 15, 2015",
+                "commentContent":"Great Photo, Cheers from Poznan!",
+                "commentAuthorID": 5
+              },
+              {
+                "commentID": 2,
+                "commentDate": "July 14, 2015",
+                "commentContent":"Nice one!",
+                "commentAuthorID": 3
+              }
+            ]
+        },
+        {
+            "date" : "May 12, 2014",
+            "author": "kelly3333",
+            "authorID": 2,
+            "postID": "700",
+            "authorAvatar": "https://s3.amazonaws.com/uifaces/faces/twitter/sauro/128.jpg",
+            "tags": ["#johndoe", "#dogs" ,"#sea"],
+            "imgUrl":"assets/posts/user2post3.jpeg",
+            "smallImgUrl":"assets/posts/user2post3small.jpeg",
+            "likesUsersIds": [2, 5],
+            "comments": [
+              {
+                "commentID": 1,
+                "commentDate": "July 15, 2015",
+                "commentContent":"Great Photo, Cheers from Poznan!",
+                "commentAuthorID": 5
+              },
+              {
+                "commentID": 2,
+                "commentDate": "July 14, 2015",
+                "commentContent":"Nice one!",
+                "commentAuthorID": 3
+              }
+            ]
+        },
+        {
+            "date" : "May 12, 2014",
+            "author": "kelly3333",
+            "authorID": 2,
+            "postID": "701",
+            "authorAvatar": "https://s3.amazonaws.com/uifaces/faces/twitter/sauro/128.jpg",
+            "tags": ["#anything", "#dogs" ,"#sea"],
+            "imgUrl":"assets/posts/user2post4.jpeg",
+            "smallImgUrl":"assets/posts/user2post4small.jpeg",
+            "likesUsersIds": [2, 5],
+            "comments": [
+              {
+                "commentID": 1,
+                "commentDate": "July 15, 2015",
+                "commentContent":"Great Photo, Cheers from Poznan!",
+                "commentAuthorID": 5
+              },
+              {
+                "commentID": 2,
+                "commentDate": "July 14, 2015",
+                "commentContent":"Nice one!",
+                "commentAuthorID": 3
+              }
+            ]
+        },
+        {
+            "date" : "May 12, 2014",
+            "author": "kelly3333",
+            "authorID": 2,
+            "postID": "702",
+            "authorAvatar": "https://s3.amazonaws.com/uifaces/faces/twitter/sauro/128.jpg",
+            "tags": ["#clouds", "#dogs" ,"#sea"],
+            "imgUrl":"assets/posts/user2post5.jpeg",
+            "smallImgUrl":"assets/posts/user2post5small.jpeg",
+            "likesUsersIds": [2, 5],
+            "comments": [
+              {
+                "commentID": 1,
+                "commentDate": "July 15, 2015",
+                "commentContent":"Great Photo, Cheers from Poznan!",
+                "commentAuthorID": 5
+              },
+              {
+                "commentID": 2,
+                "commentDate": "July 14, 2015",
+                "commentContent":"Nice one!",
+                "commentAuthorID": 3
+              }
+            ]
+        }
+      ]
+    },
+    {
+      "id": 3,
+      "name": "Zbigniew Boniek",
+      "username": "zibi444",
+      "password": "password",
+      "email": "zibi111@gmail.com",
+      "phoneNumber": 601901501,
+      "avatar": "http://cdn26.se.smcloud.net/t/photos/t/523854/zbigniew-boniek-i-grzegorz-krychowiak_26102789.jpg",
+      "followersIds": [0, 4],
+      "followedUsersIds": [3, 6],
+      "posts":[
+        {
+            "date" : "May 12, 2012",
+            "author": "zibi444",
+            "authorID": 3,
+            "postID": "704",
+            "authorAvatar": "http://cdn26.se.smcloud.net/t/photos/t/523854/zbigniew-boniek-i-grzegorz-krychowiak_26102789.jpg",
+            "tags": ["#sun", "#dogs" ,"#sea"],
+            "imgUrl":"assets/posts/user3post0.jpeg",
+            "smallImgUrl":"assets/posts/user3post0small.jpeg",
+            "likesUsersIds": [2, 5],
+            "comments": [
+              {
+                "commentID": 1,
+                "commentDate": "July 15, 2015",
+                "commentContent":"Great Photo, Cheers from Poznan!",
+                "commentAuthorID": 5
+              },
+              {
+                "commentID": 2,
+                "commentDate": "July 14, 2015",
+                "commentContent":"Nice one!",
+                "commentAuthorID": 3
+              }
+            ]
+        },
+        {
+            "date" : "May 12, 2019",
+            "author": "zibi444",
+            "authorID": 3,
+            "postID": "954",
+            "authorAvatar": "http://cdn26.se.smcloud.net/t/photos/t/523854/zbigniew-boniek-i-grzegorz-krychowiak_26102789.jpg",
+            "tags": ["#beer", "#dogs" ,"#sea"],
+            "imgUrl":"assets/posts/user3post1.jpeg",
+            "smallImgUrl":"assets/posts/user3post1small.jpeg",
+            "likesUsersIds": [2, 5],
+            "comments": [
+              {
+                "commentID": 1,
+                "commentDate": "July 15, 2015",
+                "commentContent":"Great Photo, Cheers from Poznan!",
+                "commentAuthorID": 5
+              },
+              {
+                "commentID": 2,
+                "commentDate": "July 14, 2015",
+                "commentContent":"Nice one!",
+                "commentAuthorID": 3
+              }
+            ]
+        },
+        {
+            "date" : "May 12, 2014",
+            "author": "zibi444",
+            "authorID": 3,
+            "postID": "554",
+            "authorAvatar": "http://cdn26.se.smcloud.net/t/photos/t/523854/zbigniew-boniek-i-grzegorz-krychowiak_26102789.jpg",
+            "tags": ["#water", "#dogs" ,"#sea"],
+            "imgUrl":"assets/posts/user3post2.jpeg",
+            "smallImgUrl":"assets/posts/user3post2small.jpeg",
+            "likesUsersIds": [2, 5],
+            "comments": [
+              {
+                "commentID": 1,
+                "commentDate": "July 15, 2015",
+                "commentContent":"Great Photo, Cheers from Poznan!",
+                "commentAuthorID": 5
+              },
+              {
+                "commentID": 2,
+                "commentDate": "July 14, 2015",
+                "commentContent":"Nice one!",
+                "commentAuthorID": 3
+              }
+            ]
+        },
+        {
+            "date" : "May 12, 2014",
+            "author": "zibi444",
+            "authorID": 3,
+            "postID": "553",
+            "authorAvatar": "http://cdn26.se.smcloud.net/t/photos/t/523854/zbigniew-boniek-i-grzegorz-krychowiak_26102789.jpg",
+            "tags": ["#johndoe", "#dogs" ,"#sea"],
+            "imgUrl":"assets/posts/user3post3.jpeg",
+            "smallImgUrl":"assets/posts/user3post3small.jpeg",
+            "likesUsersIds": [2, 5],
+            "comments": [
+              {
+                "commentID": 1,
+                "commentDate": "July 15, 2015",
+                "commentContent":"Great Photo, Cheers from Poznan!",
+                "commentAuthorID": 5
+              },
+              {
+                "commentID": 2,
+                "commentDate": "July 14, 2015",
+                "commentContent":"Nice one!",
+                "commentAuthorID": 3
+              }
+            ]
+        },
+        {
+            "date" : "May 12, 2014",
+            "author": "zibi444",
+            "authorID": 3,
+            "postID": "112",
+            "authorAvatar": "http://cdn26.se.smcloud.net/t/photos/t/523854/zbigniew-boniek-i-grzegorz-krychowiak_26102789.jpg",
+            "tags": ["#anything", "#dogs" ,"#sea"],
+            "imgUrl":"assets/posts/user3post4.jpeg",
+            "smallImgUrl":"assets/posts/user3post4small.jpeg",
+            "likesUsersIds": [2, 5],
+            "comments": [
+              {
+                "commentID": 1,
+                "commentDate": "July 15, 2015",
+                "commentContent":"Great Photo, Cheers from Poznan!",
+                "commentAuthorID": 5
+              },
+              {
+                "commentID": 2,
+                "commentDate": "July 14, 2015",
+                "commentContent":"Nice one!",
+                "commentAuthorID": 3
+              }
+            ]
+        }
+      ]
+    },
+    {
+      "id": 4,
+      "name": "Jack Sparrow",
+      "username": "pirate123",
+      "password": "password",
+      "email": "wrobel@gmail.com",
+      "phoneNumber": 999999999,
+      "avatar": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcT3lDLc7fK6Dm4xLKvV9ABJbxm7PwxDzWEx1SkHSnBGaiDo2ktS",
+      "followersIds": [0, 4],
+      "followedUsersIds": [3, 6],
+      "posts":[
+        {
+            "date" : "May 12, 2012",
+            "author": "pirate123",
+            "authorID": 4,
+            "postID": "113",
+            "authorAvatar":"https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcT3lDLc7fK6Dm4xLKvV9ABJbxm7PwxDzWEx1SkHSnBGaiDo2ktS",
+            "tags" : ["#sun", "#dogs" ,"#sea"],
+            "imgUrl":"assets/posts/user4post0.jpeg",
+            "smallImgUrl":"assets/posts/user4post0small.jpeg",
+            "likesUsersIds": [2, 5],
+            "comments": [
+              {
+                "commentID": 1,
+                "commentDate": "July 15, 2015",
+                "commentContent":"Great Photo, Cheers from Poznan!",
+                "commentAuthorID": 5
+              },
+              {
+                "commentID": 2,
+                "commentDate": "July 14, 2015",
+                "commentContent":"Nice one!",
+                "commentAuthorID": 3
+              }
+            ]
+        },
+        {
+            "date" : "May 12, 2019",
+            "author": "pirate123",
+            "authorID": 4,
+            "postID": "114",
+            "authorAvatar":"https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcT3lDLc7fK6Dm4xLKvV9ABJbxm7PwxDzWEx1SkHSnBGaiDo2ktS",
+            "tags" : ["#beer", "#dogs" ,"#sea"],
+            "imgUrl":"assets/posts/user4post1.jpeg",
+            "smallImgUrl":"assets/posts/user4post1small.jpeg",
+            "likesUsersIds": [2, 5],
+            "comments": [
+              {
+                "commentID": 1,
+                "commentDate": "July 15, 2015",
+                "commentContent":"Great Photo, Cheers from Poznan!",
+                "commentAuthorID": 5
+              },
+              {
+                "commentID": 2,
+                "commentDate": "July 14, 2015",
+                "commentContent":"Nice one!",
+                "commentAuthorID": 3
+              }
+            ]
+        },
+        {
+            "date" : "May 12, 2011",
+            "author": "pirate123",
+            "authorID": 4,
+            "postID": "115",
+            "authorAvatar":"https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcT3lDLc7fK6Dm4xLKvV9ABJbxm7PwxDzWEx1SkHSnBGaiDo2ktS",
+            "tags" : ["#water", "#dogs" ,"#sea"],
+            "imgUrl":"assets/posts/user4post2.jpeg",
+            "smallImgUrl":"assets/posts/user4post2small.jpeg",
+            "likesUsersIds": [2, 5],
+            "comments": [
+              {
+                "commentID": 1,
+                "commentDate": "July 15, 2015",
+                "commentContent":"Great Photo, Cheers from Poznan!",
+                "commentAuthorID": 5
+              },
+              {
+                "commentID": 2,
+                "commentDate": "July 14, 2015",
+                "commentContent":"Nice one!",
+                "commentAuthorID": 3
+              }
+            ]
+        }
+      ]
+    },
+    {
+      "id": 5,
+      "name": "Jamie Lannister",
+      "username": "kingslayer",
+      "password": "password",
+      "email": "kingslayer@gmail.com",
+      "phoneNumber": 700700700,
+      "avatar": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcR2U9sKGQoyvy6G4Ua3HBT4HSkpGHflr4Fd6zFq_2yNnpjmebZl",
+      "followersIds": [0, 4],
+      "followedUsersIds": [3, 6],
+      "posts":[
+        {
+            "date" : "May 12, 2012",
+            "author": "kingslayer",
+            "authorID": 5,
+            "postID": "116",
+            "authorAvatar":"https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcR2U9sKGQoyvy6G4Ua3HBT4HSkpGHflr4Fd6zFq_2yNnpjmebZl",
+            "tags" : ["#sun", "#dogs" ,"#sea"],
+            "imgUrl":"assets/posts/user5post0.jpeg",
+            "smallImgUrl":"assets/posts/user5post0small.jpeg",
+            "likesUsersIds": [2, 5],
+            "comments": [
+              {
+                "commentID": 1,
+                "commentDate": "July 15, 2015",
+                "commentContent":"Great Photo, Cheers from Poznan!",
+                "commentAuthorID": 5
+              },
+              {
+                "commentID": 2,
+                "commentDate": "July 14, 2015",
+                "commentContent":"Nice one!",
+                "commentAuthorID": 3
+              }
+            ]
+        },
+        {
+            "date" : "May 12, 2019",
+            "author": "kingslayer",
+            "authorID": 5,
+            "postID": "117",
+            "authorAvatar":"https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcR2U9sKGQoyvy6G4Ua3HBT4HSkpGHflr4Fd6zFq_2yNnpjmebZl",
+            "tags" : ["#beer", "#dogs" ,"#sea"],
+            "imgUrl":"assets/posts/user5post1.jpeg",
+            "smallImgUrl":"assets/posts/user5post1small.jpeg",
+            "likesUsersIds": [2, 5],
+            "comments": [
+              {
+                "commentID": 1,
+                "commentDate": "July 15, 2015",
+                "commentContent":"Great Photo, Cheers from Poznan!",
+                "commentAuthorID": 5
+              },
+              {
+                "commentID": 2,
+                "commentDate": "July 14, 2015",
+                "commentContent":"Nice one!",
+                "commentAuthorID": 3
+              }
+            ]
+        },
+        {
+            "date" : "May 12, 2014",
+            "author": "kingslayer",
+            "authorID": 5,
+            "postID": "118",
+            "authorAvatar":"https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcR2U9sKGQoyvy6G4Ua3HBT4HSkpGHflr4Fd6zFq_2yNnpjmebZl",
+            "tags" : ["#water", "#dogs" ,"#sea"],
+            "imgUrl":"assets/posts/user5post2.jpeg",
+            "smallImgUrl":"assets/posts/user5post2small.jpeg",
+            "likesUsersIds": [2, 5],
+            "comments": [
+              {
+                "commentID": 1,
+                "commentDate": "July 15, 2015",
+                "commentContent":"Great Photo, Cheers from Poznan!",
+                "commentAuthorID": 5
+              },
+              {
+                "commentID": 2,
+                "commentDate": "July 14, 2015",
+                "commentContent":"Nice one!",
+                "commentAuthorID": 3
+              }
+            ]
+        },
+        {
+            "date" : "May 12, 2014",
+            "author": "kingslayer",
+            "authorID": 5,
+            "postID": "119",
+            "authorAvatar":"https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcR2U9sKGQoyvy6G4Ua3HBT4HSkpGHflr4Fd6zFq_2yNnpjmebZl",
+            "tags" : ["#johndoe", "#dogs" ,"#sea"],
+            "imgUrl":"assets/posts/user5post3.jpeg",
+            "smallImgUrl":"assets/posts/user5post3small.jpeg",
+            "likesUsersIds": [2, 5],
+            "comments": [
+              {
+                "commentID": 1,
+                "commentDate": "July 15, 2015",
+                "commentContent":"Great Photo, Cheers from Poznan!",
+                "commentAuthorID": 5
+              },
+              {
+                "commentID": 2,
+                "commentDate": "July 14, 2015",
+                "commentContent":"Nice one!",
+                "commentAuthorID": 3
+              }
+            ]
+        },
+        {
+            "date" : "May 12, 2014",
+            "author": "kingslayer",
+            "authorID": 5,
+            "postID": "120",
+            "authorAvatar":"https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcR2U9sKGQoyvy6G4Ua3HBT4HSkpGHflr4Fd6zFq_2yNnpjmebZl",
+            "tags" : ["#anything", "#dogs" ,"#sea"],
+            "imgUrl":"assets/posts/user5post4.jpeg",
+            "smallImgUrl":"assets/posts/user5post4small.jpeg",
+            "likesUsersIds": [2, 5],
+            "comments": [
+              {
+                "commentID": 1,
+                "commentDate": "July 15, 2015",
+                "commentContent":"Great Photo, Cheers from Poznan!",
+                "commentAuthorID": 5
+              },
+              {
+                "commentID": 2,
+                "commentDate": "July 14, 2015",
+                "commentContent":"Nice one!",
+                "commentAuthorID": 3
+              }
+            ]
+        },
+        {
+            "date" : "May 12, 2014",
+            "author": "kingslayer",
+            "authorID": 5,
+            "postID": "121",
+            "authorAvatar":"https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcR2U9sKGQoyvy6G4Ua3HBT4HSkpGHflr4Fd6zFq_2yNnpjmebZl",
+            "tags" : ["#clouds", "#dogs" ,"#sea"],
+            "imgUrl":"assets/posts/user5post5.jpeg",
+            "smallImgUrl":"assets/posts/user5post5small.jpeg",
+            "likesUsersIds": [2, 5],
+            "comments": [
+              {
+                "commentID": 1,
+                "commentDate": "July 15, 2015",
+                "commentContent":"Great Photo, Cheers from Poznan!",
+                "commentAuthorID": 5
+              },
+              {
+                "commentID": 2,
+                "commentDate": "July 14, 2015",
+                "commentContent":"Nice one!",
+                "commentAuthorID": 3
+              }
+            ]
+        }
+      ]
+    }
+  ],
+  "profile": { "name": "typicode" }
+}

@@ -1,0 +1,16 @@
+@import "../../../styles.scss";
+
+:host {
+  .nav-wrapper {
+    flex-wrap: nowrap;
+  }
+
+  .brand-logo {
+    font-family: 'Pacifico', cursive;
+    flex-wrap: nowrap;
+    font-size: 11px;
+    @media #{$small-and-down} {
+      font-size: 20px;
+    }
+  }
+}

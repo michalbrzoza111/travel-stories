@@ -1,0 +1,36 @@
+<div class="wrapper">
+  <div class="post z-depth-5" *ngIf="currentPost">
+    <div class="post-image-wrapper">
+      <img src="{{currentPost.imgUrl}}" class="post-image">
+    </div>
+    <div class="side">
+      <div>
+        <div class="side-header">
+          <div class="side-details-wrapper">
+            <!-- <a [routerLink]="['/profile', post.authorID]"> -->
+            <img src="{{user.avatar}}" alt="" class="side-image circle">
+            <div class="side-details">
+              <div> {{user.username}} </div>
+            </div>
+          </div>
+          <div class="side-date"> {{currentPost.date | date }} </div>
+        </div>
+        <div *ngIf="currentPost.tags" class="side-tags">
+          <span *ngFor="let tag of currentPost.tags; let isLast=last"> {{tag}} </span>
+        </div>
+        <div class="side-comments">
+          <app-comments [post]="currentPost"></app-comments>
+        </div>
+      </div>
+      <div class="side-content">
+        <div class="side-socials">
+          <i class="material-icons"> favorite_border </i>
+          <i class="material-icons"> comment </i>
+        </div>
+        Liczba polubień: {{currentPost.likes.length}}
+
+        <input type="text" placeholder="Add Comment...">
+      </div>
+    </div>
+  </div>
+</div>

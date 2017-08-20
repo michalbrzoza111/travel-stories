@@ -1,0 +1,23 @@
+<!-- <div class="explore-card z-depth-5"> -->
+<div class="explore-card">
+  <div class="explore-header">
+    <div class="explore-details">
+      <a [routerLink]="['/', user.username]">
+        <img class="explore-avatar circle" src="{{user.avatar}}">
+      </a>
+      <a [routerLink]="['/', user.username]">
+      {{user.name}}
+      </a>
+    </div>
+
+    <i class="material-icons">person_add</i>
+  </div>
+
+
+  <!-- <div class="explore-images">
+    <div *ngFor="let post of user.posts" class="explore-image-container  col s3">
+      <img src="{{post.smallImgUrl}}" class="explore-image">
+    </div>
+  </div> -->
+
+</div>

@@ -1,0 +1,14 @@
+<div class="wall">
+  <p class="flow-text">
+    Poznawaj ludzi
+  </p>
+  <app-explore-card *ngFor="let user of users" [user]="user">
+  </app-explore-card>
+
+  <div class="explore-posts">
+    <div *ngFor="let post of posts; let i = index;" class="explore-post col s2">
+      <img src="{{post.smallImgUrl}}" class="explore-post-img" *ngIf="post" [routerLink]="['/post', post.authorUsername, post._id ]">
+    </div>
+  </div>
+
+</div>

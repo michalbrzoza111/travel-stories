@@ -1,0 +1,30 @@
+<md-dialog-content>
+  <div class="post-image-wrapper">
+    <img src="{{currentPost.imgUrl}}">
+  </div>
+
+  <div class="side">
+    <div>
+      <div class="side-header">
+        <div class="avatar-name-username-group">
+          <!-- <a [routerLink]="['/profile', post.authorID]"> -->
+          <img src="{{user.avatar}}" alt="" class="circle">
+          <div class="name-username-group">
+            <div> {{user.username}} </div>
+          </div>
+        </div>
+        <div> {{currentPost.date}} </div>
+      </div>
+      <div clss="side-content">
+        <div>
+          <span *ngFor="let tag of currentPost.tags; let isLast=last"> {{tag}}  </span>
+        </div>
+        <div>
+          <i> heart</i> 17 likes
+          <i></i> 3 comments
+        </div>
+      </div>
+    </div>
+    <input type="text" placeholder="Add Comment...">
+  </div>
+</md-dialog-content>

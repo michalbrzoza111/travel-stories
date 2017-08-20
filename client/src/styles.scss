@@ -1,0 +1,104 @@
+/* You can add global styles to this file, and also import other style files */
+@import '~@angular/material/prebuilt-themes/pink-bluegrey.css';
+@import '~materialize-css/sass/components/_color.scss';
+
+//overwrites materialize
+
+$roboto-font-path: "~materialize-css/dist/fonts/roboto/";
+$primary-color: color("indigo", "lighten-5");
+$secondary-color: color("indigo", "lighten-5") !default; // $navbar-font-color: color("indigo", "lighten-1") !default;
+// $link-color: color("indigo", "darken-1") !default;
+// $button-raised-color: color("indigo", "darken-1") !default;
+$navbar-font-color: black !default;
+// $link-color: black !default;
+$button-raised-color: black !default;
+$navbar-brand-font-size: 1.3rem !default;
+$medium-screen-up: 992px !default;
+@import "~materialize-css/sass/materialize.scss";
+@media #{$medium-and-up} {
+  .container {
+    width: 90%;
+  }
+}
+
+//----------
+
+
+
+$margin: 24px;
+$margin-md: 16px;
+$margin-sm: 12px;
+$margin-xs: 8px;
+$padding: 24px;
+$padding-md: 16px;
+$padding-sm: 12px;
+$padding-xs: 8px;
+$space: 60px;
+
+body {
+  display: flex;
+  min-height: 100vh;
+  flex-direction: column;
+}
+
+main {
+  flex: 1 0 auto;
+}
+
+.footer {
+  margin-top: 10vw;
+
+  .row {
+    margin-bottom: 0;
+  }
+  font-size: 10px;
+  padding: $padding;
+  display: flex;
+  flex-direction: column;
+  @media only screen and (min-width: 993px) {
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+    padding: $padding;
+  }
+
+  .footer-links {
+    // display: flex;
+    // flex-wrap: wrap;
+    // flex-basis: 30%;
+    display: inline-block;
+    text-align: center;
+    @media only screen and (min-width: 993px) {
+      flex-basis: 70%;
+    }
+  }
+
+  .footer-link {
+    margin-right: $margin-xs;
+    @media only screen and (min-width: 993px) {
+      margin-right: $margin;
+    }
+  }
+
+  .footer-brand {
+    flex-basis: 100%;
+    display: flex;
+    justify-content: center;
+    margin-top: $margin-xs;
+    @media only screen and (min-width: 993px) {
+      flex-basis: 30%;
+      justify-content: flex-end;
+    }
+  }
+}
+
+a {
+  text-decoration: none;
+  color: inherit;
+  outline:0;
+  &:hover, &:focus, &visited {
+    border:none;
+    outline:0;
+  }
+}

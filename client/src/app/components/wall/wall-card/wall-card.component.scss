@@ -1,0 +1,90 @@
+
+@import "../../../../sass/_variables.scss";
+@import "../../../../styles.scss";
+
+:host {
+  .post {
+    border-radius: 5px;
+    display: flex;
+    margin-top: $margin;
+    margin-bottom: $margin;
+    flex-direction: column;
+    max-width: 670px;
+    @media #{$medium-and-down} {
+      padding: 0;
+      box-shadow: none;
+    }
+
+    .post-image {
+      width: 100%;
+      @media #{$medium-and-down} {
+        min-width: 100%;
+      }
+    }
+  }
+
+  .side {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    @media #{$medium-and-up} {
+      padding-left: $padding-md;
+      padding-right: $padding-md;
+    }
+    @media #{$medium-and-down} {
+      margin: 0;
+    }
+  }
+
+  .post-image-wrapper {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+  .side-header {
+    display: flex;
+    justify-content: space-between;
+    padding-bottom: $padding-sm;
+    @media #{$medium-and-up} {
+      padding: $padding-md;
+    }
+
+    .side-image {
+      height: 50px;
+      max-width: 50px;
+    }
+
+    .side-details-wrapper {
+      display: flex;
+    }
+
+    .side-details {
+      padding-left: $padding-sm;
+    }
+
+    .side-date {
+      padding-left: $padding-md;
+    }
+  }
+
+  .side-tags {
+    margin-bottom: $margin-xs;
+  }
+
+  .side-content {}
+
+  .side-socials {
+    margin-bottom: $margin-xs;
+    margin-top: $margin-xs;
+  }
+
+  .side-comments {
+    overflow-y: auto;
+    margin-top: $margin-md;
+    max-height: 100px;
+    @media #{$medium-and-up} {
+      max-height: calc(100px + 6vw);
+    }
+  }
+}

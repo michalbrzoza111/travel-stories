@@ -1,0 +1,22 @@
+<div class="form">
+  <p class="flow-text">Register me</p>
+  <form (submit)="onRegisterSubmit()" #f="ngForm">
+    <div class="input-field">
+      <label>Name</label>
+      <input type="text" required [(ngModel)]="name" name="name" class="validate">
+    </div>
+    <div class="input-field">
+      <label>Username</label>
+      <input type="text" required [(ngModel)]="username" name="username" class="validate">
+    </div>
+    <div class="input-field">
+      <label>Email</label>
+      <input type="text" required [(ngModel)]="email" name="email" class="validate">
+    </div>
+    <div class="input-field">
+      <label>Password</label>
+      <input type="password" required [(ngModel)]="password" name="password" class="validate">
+    </div>
+    <input type="submit" class="btn form-button" value="Submit">
+  </form>
+</div>

@@ -1,0 +1,27 @@
+@import "../../../../../sass/_variables.scss";
+
+:host {
+  .comment {
+    padding-bottom: $padding-xs;
+  }
+
+  .comment-header {
+    display: flex;
+    align-items: center;
+  }
+
+  .comment-image-link {
+    display: flex;
+    align-items: center;
+  }
+
+  .comment-avatar {
+    width: 25px;
+    height: 25px;
+  }
+
+  .comment-user {
+    margin-left: $margin-xs;
+    font-weight: bolder;
+  }
+}

@@ -1,0 +1,63 @@
+<nav class="nav-extended">
+  <div class="nav-wrapper container">
+    <a class="brand-logo">
+      <!-- <img src="../../../assets/logo.jpg" class="brand-logo-image"> -->
+      Travel Stories
+    </a>
+
+    <a class='dropdown-button button-collapse' data-activates='dropdown1'><i class="material-icons">menu</i></a>
+    <ul id="nav-mobile" class="right hide-on-med-and-down">
+      <!-- <li *ngIf="authService.loggedIn()" [routerLinkActive]="['active']" [routerLinkActiveOptions]="{exact:true}"><a [routerLink]="['/', loggedUser.username]">Dashboard</a></li> -->
+      <!-- <li *ngIf="authService.loggedIn()" [routerLinkActive]="['active']" [routerLinkActiveOptions]="{exact:true}"><a [routerLink]="['/', loggedUser.username]">Profile</a></li> -->
+      <li *ngIf="!authService.loggedIn()" [routerLinkActive]="['active']" [routerLinkActiveOptions]="{exact:true}"><a [routerLink]="['/home']">Home</a></li>
+      <li *ngIf="!authService.loggedIn()" [routerLinkActive]="['active']" [routerLinkActiveOptions]="{exact:true}"><a [routerLink]="['/login']">Login</a></li>
+      <li *ngIf="!authService.loggedIn()" [routerLinkActive]="['active']" [routerLinkActiveOptions]="{exact:true}"><a [routerLink]="['/register']">Register</a></li>
+      <li *ngIf="authService.loggedIn()" [routerLinkActive]="['active']" [routerLinkActiveOptions]="{exact:true}">
+        <a [routerLink]="['/explore']">
+          <!-- <i class="material-icons">explore</i> -->
+          Explore
+        </a>
+      </li>
+      <li *ngIf="authService.loggedIn()" [routerLinkActive]="['active']" [routerLinkActiveOptions]="{exact:true}">
+        <a [routerLink]="['/wall']">
+          <!-- <i class="material-icons">favorite</i> -->
+          Wall
+        </a>
+      </li>
+      <li *ngIf="authService.loggedIn()" [routerLinkActive]="['active']" [routerLinkActiveOptions]="{exact:true}">
+        <!-- <a [routerLink]="['/', loggedUser.username]"> -->
+          <a (click)="navigateToProfile()">
+          <!-- <i class="material-icons">person</i> -->
+          Profile
+        </a>
+      </li>
+      <li *ngIf="authService.loggedIn()"><a (click)="onLogoutClick()" href="#">Logout</a></li>
+    </ul>
+    <ul id='dropdown1' class='dropdown-content hide-on-large-only'>
+      <li *ngIf="authService.loggedIn()" [routerLinkActive]="['active']" [routerLinkActiveOptions]="{exact:true}">
+        <a [routerLink]="['/explore']">
+          <!-- <i class="material-icons">explore</i> -->
+          Explore
+        </a>
+      </li>
+      <li *ngIf="authService.loggedIn()" [routerLinkActive]="['active']" [routerLinkActiveOptions]="{exact:true}">
+        <a [routerLink]="['/wall']">
+          <!-- <i class="material-icons">favorite</i> -->
+          Wall
+        </a>
+      </li>
+      <li *ngIf="authService.loggedIn()" [routerLinkActive]="['active']" [routerLinkActiveOptions]="{exact:true}">
+        <!-- <a [routerLink]="['/', loggedUser.username]"> -->
+            <a (click)="navigateToProfile()">
+          <!-- <i class="material-icons">person</i> -->
+          Profile
+        </a>
+      </li>
+      <li *ngIf="authService.loggedIn()"><a (click)="onLogoutClick()" href="#">Logout</a></li>
+      <li *ngIf="!authService.loggedIn()" [routerLinkActive]="['active']" [routerLinkActiveOptions]="{exact:true}"><a [routerLink]="['/home']">Home</a></li>
+      <li *ngIf="!authService.loggedIn()" [routerLinkActive]="['active']" [routerLinkActiveOptions]="{exact:true}"><a [routerLink]="['/login']">Login</a></li>
+      <li *ngIf="!authService.loggedIn()" [routerLinkActive]="['active']" [routerLinkActiveOptions]="{exact:true}"><a [routerLink]="['/register']">Register</a></li>
+    </ul>
+
+  </div>
+</nav>

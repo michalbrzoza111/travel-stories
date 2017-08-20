@@ -1,0 +1,72 @@
+<div *ngIf="user&&loggedUser">
+<div  class="profile">
+  <!-- <i (click)="goBack()" class="material-icons">arrow_back</i> -->
+  <div class="profile-details-wrapper">
+    <img class="profile-image circle z-depth-1" src="{{user.avatar}}">
+    <div class="profile-details">
+      <div *ngIf="!isMobileLayoutActive" class="profile-username">
+        <span>{{user.name}}</span>
+        <button *ngIf="user.username === loggedUser.username" class="waves-effect waves-light btn profile-details-button">Edit Profile
+        <a [routerLink]="['/settings', user.id ]" class="profile-settings-link">
+          <i class="material-icons profile-settings-icon">settings</i>
+        </a>
+        </button>
+      </div>
+      <div *ngIf="isMobileLayoutActive" class="profile-username">
+        <span>{{user.name}}</span>
+        <a *ngIf="user.username === loggedUser.username" [routerLink]="['/settings', user.id ]" class="profile-settings-link">
+          <i class="material-icons profile-settings-icon">settings</i>
+        </a>
+      </div>
+      <div *ngIf="!isMobileLayoutActive" class="profile-socials">
+        <div class="profile-posts-count" *ngIf="user.posts">
+          Posty: {{user.posts.length}}
+        </div>
+        <div class="profile-followers">
+          {{user.followers.length}} Obserwujących
+        </div>
+        <div class="profile-followed">
+          <!-- Obserwowani: {{user.followedUsersIds.length}} -->
+        </div>
+      </div>
+    </div>
+  </div>
+  <div *ngIf="isMobileLayoutActive" class="profile-socials-mobile">
+    <div class="profile-posts-count">
+      <div>
+        Posty:
+      </div>
+      <div>
+        {{user.posts.length}}
+      </div>
+    </div>
+    <div class="profile-followers">
+      <div>
+        {{user.followers.length}}
+      </div>
+      <div>
+        Obserwujących
+      </div>
+    </div>
+    <div class="profile-followed">
+      <div>
+        Obserwowani:
+      </div>
+      <div>
+        <!-- {{user.followedUsersIds.length}} -->
+      </div>
+    </div>
+  </div>
+  <!-- <div *ngFor="let post of user.posts; let i = index;" (click)="openDialog(i)" class="four wide column">
+    <img src="{{post.smallImgUrl}}">
+  </div> -->
+
+  <div class="profile-posts">
+    <div *ngFor="let post of user.posts; let i = index;" [routerLink]="['/post', user.username, post._id ]" class="profile-post col s2">
+      <img src="{{post.smallImgUrl}}" class="profile-post-img">
+    </div>
+  </div>
+</div>
+
+<input *ngIf="user.username === loggedUser.username" type="button"  class="btn" value="Upload" (click)="showPicker()" />
+</div>

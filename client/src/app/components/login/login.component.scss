@@ -1,0 +1,27 @@
+@import "../../../sass/_variables.scss";
+@import "../../../styles.scss";
+
+:host {
+  .form {
+    padding: $padding;
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: $margin;
+    @extend .z-depth-3;
+    @media #{$medium-and-up} {
+      width: 350px;
+      margin-top: $space;
+    }
+
+    .flow-text {
+      text-align: center;
+      margin-top: 0;
+      margin-bottom: 0;
+    }
+  }
+
+  .form-button {
+    margin-top: $padding;
+    width: 100%;
+  }
+}

@@ -1,0 +1,42 @@
+
+<div class="wrapper" *ngIf="user">
+  <div class="post z-depth-5" *ngIf="post">
+    <div class="side-header">
+      <div class="side-details-wrapper">
+        <!-- <a [routerLink]="['/profile', post.authorID]"> -->
+        <!-- -->
+        <a [routerLink]="['/', user.username]"> <img src="{{user.avatar}}" alt="" class="side-image circle"> </a>
+        <div class="side-details">
+          <div> <a [routerLink]="['/', user.username]">  {{user.username}} </a> </div>
+        </div>
+      </div>
+      <div class="side-date"> {{post.date | date }} </div>
+    </div>
+    <div class="post-image-wrapper">
+      <img src="{{post.imgUrl}}" class="post-image">
+    </div>
+    <div class="side">
+      <div>
+        <div class="side-socials">
+          <i class="material-icons"> favorite_border </i>
+          <i class="material-icons"> comment </i>
+        </div>
+        <div>
+          <!-- Liczba polubień: {{post.likesUsersIds.length}} -->
+        </div>
+
+        <div *ngIf="post.tags" class="side-tags">
+          <span *ngFor="let tag of post.tags; let isLast=last"> {{tag}} </span>
+        </div>
+        <div class="side-comments">
+          <app-comments [post]="post"></app-comments>
+        </div>
+      </div>
+      <div class="side-content">
+          <form (submit)="onCommentSubmit()">
+        <input type="text" placeholder="Add Comment..." [(ngModel)]="content" name="content">
+      </form>
+      </div>
+    </div>
+  </div>
+</div>

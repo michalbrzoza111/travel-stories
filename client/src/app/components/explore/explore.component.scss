@@ -1,0 +1,50 @@
+@import "../../../sass/_variables.scss";
+@import "../../../styles.scss";
+
+:host {
+  .explore-posts {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: flex-start;
+    align-content: stretch;
+    padding: 0;
+    @media #{$large-and-up} {
+      margin-top: $space;
+    }
+  }
+
+  .explore-post-img {
+    width: 100%;
+    height: 100%;
+    max-height: 250px;
+    cursor: pointer;
+
+    &:hover, &:focus, &visited {
+      border:none;
+      outline:0;
+    }
+  }
+
+  .explore-post {
+    display: flex;
+    align-items: center;
+    float: left;
+    flex: 0 0 auto;
+    background-color: #fff;
+    padding: 1vw;
+
+  }
+  @media screen and (min-width: 250px) {
+    .explore-post {
+      width: calc(100%/3);
+      height: calc(100%/3);
+    }
+  }
+  @media screen and (max-width: 250px) {
+    .explore-post {
+      width: 100%;
+      height: 100%;
+    }
+  }
+}

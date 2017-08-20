@@ -1,0 +1,14 @@
+<div class="form">
+  <p class="flow-text"> Log me in</p>
+  <form (submit)="onLoginSubmit()" #f="ngForm">
+    <div class="input-field ">
+      <label>First Name</label>
+      <input type="text" class="validate" required [(ngModel)]="username" name="username">
+    </div>
+    <div class="input-field">
+      <label>Password</label>
+      <input type="password" class="validate" required [(ngModel)]="password" name="password">
+    </div>
+    <input type="submit" class="btn form-button" value="Login">
+  </form>
+</div>
