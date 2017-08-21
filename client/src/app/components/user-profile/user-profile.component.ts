@@ -14,7 +14,7 @@ import { UserService } from './../../services/user.service';
 
 declare const filestack: {
   init(apiKey: string): {
-    pick({ maxFiles }: { maxFiles: number }):
+    pick({ maxFiles }: { maxFiles,  accept, transformations, imageMin }):
       Promise<{ filesUploaded: { url: string }[] }>
   }
 };
@@ -65,7 +65,7 @@ export class UserProfileComponent implements OnInit {
 
   async showPicker() {
     const client = filestack.init('AdniN18uYQZCeAC0rvoPkz');
-    const result = await client.pick({ maxFiles: 1 });
+    const result = await client.pick({ maxFiles: 1, accept: 'image/*', transformations: { crop: { aspectRatio: 800/800, force: true} }, imageMin: [600, 600]});
     this.imageUrl = result.filesUploaded[0].url;
     this.uploadPost();
   }

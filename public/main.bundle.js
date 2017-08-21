@@ -1513,7 +1513,7 @@ var UserProfileComponent = (function () {
                 switch (_a.label) {
                     case 0:
                         client = filestack.init('AdniN18uYQZCeAC0rvoPkz');
-                        return [4 /*yield*/, client.pick({ maxFiles: 1 })];
+                        return [4 /*yield*/, client.pick({ maxFiles: 1, accept: 'image/*', transformations: { crop: { aspectRatio: 800 / 800, force: true } }, imageMin: [600, 600] })];
                     case 1:
                         result = _a.sent();
                         this.imageUrl = result.filesUploaded[0].url;
