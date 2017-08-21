@@ -11,10 +11,10 @@ export class UsersService {
   isDev: boolean;
 
   constructor(private http: Http) {
-    this.isDev = true; // Change to false before deployment
+    this.isDev = true;
   }
 
-  //Get All Users
+  // Get All Users
   getUsers() {
     let headers = new Headers();
     this.loadToken();
@@ -25,6 +25,7 @@ export class UsersService {
       .map(res => res.json());
   }
 
+  // Get Single User
   getUser(username) {
     let headers = new Headers();
     this.loadToken();
@@ -35,7 +36,7 @@ export class UsersService {
       .map(res => res.json());
   }
 
-  //Add New Post
+  // Add New Post
   addPost(post) {
     let username = post.authorUsername;
     let headers = new Headers();
@@ -45,8 +46,7 @@ export class UsersService {
       .map(res => res.json());
   }
 
-  //Add new comment
-
+  // Add New Comment
   addComment(comment) {
     let headers = new Headers();
     headers.append('Content-Type', 'application/json');
@@ -55,9 +55,8 @@ export class UsersService {
       .map(res => res.json());
   }
 
-  //Add comment from post directly
-  //TODO better, dry solution
-
+  // Add Comment From "Post" view
+  // TODO better, dry solution
   addCommentFromPost(comment) {
     let username = comment.postAuthorUsername;
     let postId = comment.postId;
@@ -68,8 +67,7 @@ export class UsersService {
       .map(res => res.json());
   }
 
-  //Add new comment
-
+  // Add New Like
   addLike(like) {
     let headers = new Headers();
     headers.append('Content-Type', 'application/json');
@@ -78,9 +76,8 @@ export class UsersService {
       .map(res => res.json());
   }
 
-  //Add like from post directly
-  //TODO better, dry solution
-
+  // Add like from post directly
+  // TODO better, dry solution
   addLikeFromPost(like) {
     let username = like.postAuthorUsername;
     let postId = like.postId;

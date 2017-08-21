@@ -53,7 +53,6 @@ var __decorate = (this && this.__decorate) || function (decorators, target, key,
 
 var AppComponent = (function () {
     function AppComponent() {
-        this.title = 'app';
     }
     return AppComponent;
 }());
@@ -101,14 +100,13 @@ AppComponent = __decorate([
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_24__components_user_profile_user_post_dialog_user_post_dialog_component__ = __webpack_require__("./src/app/components/user-profile/user-post-dialog/user-post-dialog.component.ts");
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_25__components_wall_wall_card_wall_card_component__ = __webpack_require__("./src/app/components/wall/wall-card/wall-card.component.ts");
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_26__components_explore_explore_card_explore_card_component__ = __webpack_require__("./src/app/components/explore/explore-card/explore-card.component.ts");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_27__components_footer_footer_component__ = __webpack_require__("./src/app/components/footer/footer.component.ts");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_28__angular_platform_browser_animations__ = __webpack_require__("./node_modules/@angular/platform-browser/@angular/platform-browser/animations.es5.js");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_29_angular_file_picker__ = __webpack_require__("./node_modules/angular-file-picker/index.js");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_30__angular_material__ = __webpack_require__("./node_modules/@angular/material/@angular/material.es5.js");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_31_angular2_materialize__ = __webpack_require__("./node_modules/angular2-materialize/dist/index.js");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_32__components_shared_group_group_component__ = __webpack_require__("./src/app/components/shared/group/group.component.ts");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_33__components_shared_comments_comment_comment_component__ = __webpack_require__("./src/app/components/shared/comments/comment/comment.component.ts");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_34__components_user_profile_user_post_user_post_component__ = __webpack_require__("./src/app/components/user-profile/user-post/user-post.component.ts");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_27__angular_platform_browser_animations__ = __webpack_require__("./node_modules/@angular/platform-browser/@angular/platform-browser/animations.es5.js");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_28_angular_file_picker__ = __webpack_require__("./node_modules/angular-file-picker/index.js");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_29__angular_material__ = __webpack_require__("./node_modules/@angular/material/@angular/material.es5.js");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_30_angular2_materialize__ = __webpack_require__("./node_modules/angular2-materialize/dist/index.js");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_31__components_shared_group_group_component__ = __webpack_require__("./src/app/components/shared/group/group.component.ts");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_32__components_shared_comments_comment_comment_component__ = __webpack_require__("./src/app/components/shared/comments/comment/comment.component.ts");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_33__components_user_profile_user_post_user_post_component__ = __webpack_require__("./src/app/components/user-profile/user-post/user-post.component.ts");
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return AppModule; });
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
@@ -145,8 +143,7 @@ var __decorate = (this && this.__decorate) || function (decorators, target, key,
 
 
 
-
-//angular filestack
+// Filestack
 
 // Material Design
 
@@ -154,7 +151,7 @@ var __decorate = (this && this.__decorate) || function (decorators, target, key,
 
 
 
-//materialize
+// Materialize
 
 
 
@@ -166,10 +163,9 @@ var appRoutes = [
     { path: 'home', component: __WEBPACK_IMPORTED_MODULE_9__components_home_home_component__["a" /* HomeComponent */] },
     { path: 'wall', component: __WEBPACK_IMPORTED_MODULE_16__components_wall_wall_component__["a" /* WallComponent */], canActivate: [__WEBPACK_IMPORTED_MODULE_15__guards_auth_guard__["a" /* AuthGuard */]] },
     { path: 'explore', component: __WEBPACK_IMPORTED_MODULE_17__components_explore_explore_component__["a" /* ExploreComponent */], canActivate: [__WEBPACK_IMPORTED_MODULE_15__guards_auth_guard__["a" /* AuthGuard */]] },
-    // { path: 'profile/:id', component: UserProfileComponent },
     { path: ':username', component: __WEBPACK_IMPORTED_MODULE_22__components_user_profile_user_profile_component__["a" /* UserProfileComponent */], canActivate: [__WEBPACK_IMPORTED_MODULE_15__guards_auth_guard__["a" /* AuthGuard */]] },
     { path: 'settings/:id', component: __WEBPACK_IMPORTED_MODULE_19__components_settings_settings_component__["a" /* SettingsComponent */], canActivate: [__WEBPACK_IMPORTED_MODULE_15__guards_auth_guard__["a" /* AuthGuard */]] },
-    { path: 'post/:username/:postId', component: __WEBPACK_IMPORTED_MODULE_34__components_user_profile_user_post_user_post_component__["a" /* UserPostComponent */], canActivate: [__WEBPACK_IMPORTED_MODULE_15__guards_auth_guard__["a" /* AuthGuard */]] },
+    { path: 'post/:username/:postId', component: __WEBPACK_IMPORTED_MODULE_33__components_user_profile_user_post_user_post_component__["a" /* UserPostComponent */], canActivate: [__WEBPACK_IMPORTED_MODULE_15__guards_auth_guard__["a" /* AuthGuard */]] },
 ];
 var AppModule = (function () {
     function AppModule() {
@@ -194,10 +190,9 @@ AppModule = __decorate([
             __WEBPACK_IMPORTED_MODULE_24__components_user_profile_user_post_dialog_user_post_dialog_component__["a" /* UserPostDialogComponent */],
             __WEBPACK_IMPORTED_MODULE_25__components_wall_wall_card_wall_card_component__["a" /* WallCardComponent */],
             __WEBPACK_IMPORTED_MODULE_26__components_explore_explore_card_explore_card_component__["a" /* ExploreCardComponent */],
-            __WEBPACK_IMPORTED_MODULE_27__components_footer_footer_component__["a" /* FooterComponent */],
-            __WEBPACK_IMPORTED_MODULE_32__components_shared_group_group_component__["a" /* GroupComponent */],
-            __WEBPACK_IMPORTED_MODULE_33__components_shared_comments_comment_comment_component__["a" /* CommentComponent */],
-            __WEBPACK_IMPORTED_MODULE_34__components_user_profile_user_post_user_post_component__["a" /* UserPostComponent */]
+            __WEBPACK_IMPORTED_MODULE_31__components_shared_group_group_component__["a" /* GroupComponent */],
+            __WEBPACK_IMPORTED_MODULE_32__components_shared_comments_comment_comment_component__["a" /* CommentComponent */],
+            __WEBPACK_IMPORTED_MODULE_33__components_user_profile_user_post_user_post_component__["a" /* UserPostComponent */]
         ],
         entryComponents: [
             __WEBPACK_IMPORTED_MODULE_24__components_user_profile_user_post_dialog_user_post_dialog_component__["a" /* UserPostDialogComponent */]
@@ -208,15 +203,15 @@ AppModule = __decorate([
             __WEBPACK_IMPORTED_MODULE_3__angular_http__["HttpModule"],
             __WEBPACK_IMPORTED_MODULE_4__angular_router__["a" /* RouterModule */].forRoot(appRoutes),
             __WEBPACK_IMPORTED_MODULE_14_angular2_flash_messages__["FlashMessagesModule"],
-            __WEBPACK_IMPORTED_MODULE_28__angular_platform_browser_animations__["a" /* NoopAnimationsModule */],
-            __WEBPACK_IMPORTED_MODULE_28__angular_platform_browser_animations__["b" /* BrowserAnimationsModule */],
-            __WEBPACK_IMPORTED_MODULE_30__angular_material__["a" /* MdCardModule */],
-            __WEBPACK_IMPORTED_MODULE_31_angular2_materialize__["a" /* MaterializeModule */],
-            __WEBPACK_IMPORTED_MODULE_30__angular_material__["b" /* MdSidenavModule */],
-            __WEBPACK_IMPORTED_MODULE_30__angular_material__["c" /* MdMenuModule */],
-            __WEBPACK_IMPORTED_MODULE_30__angular_material__["d" /* MdToolbarModule */],
-            __WEBPACK_IMPORTED_MODULE_29_angular_file_picker__["a" /* FilePickerModule */],
-            __WEBPACK_IMPORTED_MODULE_30__angular_material__["e" /* MdDialogModule */]
+            __WEBPACK_IMPORTED_MODULE_27__angular_platform_browser_animations__["a" /* NoopAnimationsModule */],
+            __WEBPACK_IMPORTED_MODULE_27__angular_platform_browser_animations__["b" /* BrowserAnimationsModule */],
+            __WEBPACK_IMPORTED_MODULE_29__angular_material__["a" /* MdCardModule */],
+            __WEBPACK_IMPORTED_MODULE_30_angular2_materialize__["a" /* MaterializeModule */],
+            __WEBPACK_IMPORTED_MODULE_29__angular_material__["b" /* MdSidenavModule */],
+            __WEBPACK_IMPORTED_MODULE_29__angular_material__["c" /* MdMenuModule */],
+            __WEBPACK_IMPORTED_MODULE_29__angular_material__["d" /* MdToolbarModule */],
+            __WEBPACK_IMPORTED_MODULE_28_angular_file_picker__["a" /* FilePickerModule */],
+            __WEBPACK_IMPORTED_MODULE_29__angular_material__["e" /* MdDialogModule */]
         ],
         providers: [__WEBPACK_IMPORTED_MODULE_10__services_validate_service__["a" /* ValidateService */], __WEBPACK_IMPORTED_MODULE_11__services_auth_service__["a" /* AuthService */], __WEBPACK_IMPORTED_MODULE_12__services_users_service__["a" /* UsersService */], __WEBPACK_IMPORTED_MODULE_13__services_user_service__["a" /* UserService */], __WEBPACK_IMPORTED_MODULE_23__components_user_profile_user_data_service__["a" /* UserDataService */], __WEBPACK_IMPORTED_MODULE_15__guards_auth_guard__["a" /* AuthGuard */]],
         bootstrap: [__WEBPACK_IMPORTED_MODULE_5__app_component__["a" /* AppComponent */]]
@@ -394,67 +389,6 @@ ExploreComponent = __decorate([
 
 var _a, _b;
 //# sourceMappingURL=explore.component.js.map
-
-/***/ }),
-
-/***/ "./src/app/components/footer/footer.component.html":
-/***/ (function(module, exports) {
-
-module.exports = "<footer class=\"page-footer\">\r\n  <div class=\"container\">\r\n    <div class=\"row\">\r\n      <div class=\"col l6 s12\">\r\n        <h5 class=\"white-text\">Footer Content</h5>\r\n        <p class=\"grey-text text-lighten-4\">You can use rows and columns here to organize your footer content.</p>\r\n      </div>\r\n      <div class=\"col l4 offset-l2 s12\">\r\n        <h5 class=\"white-text\">Links</h5>\r\n        <ul>\r\n          <li><a class=\"grey-text text-lighten-3\" href=\"#!\">Link 1</a></li>\r\n          <li><a class=\"grey-text text-lighten-3\" href=\"#!\">Link 2</a></li>\r\n          <li><a class=\"grey-text text-lighten-3\" href=\"#!\">Link 3</a></li>\r\n          <li><a class=\"grey-text text-lighten-3\" href=\"#!\">Link 4</a></li>\r\n        </ul>\r\n      </div>\r\n    </div>\r\n  </div>\r\n  <div class=\"footer-copyright\">\r\n    <div class=\"container\">\r\n      © 2014 Copyright Text\r\n      <a class=\"grey-text text-lighten-4 right\" href=\"#!\">More Links</a>\r\n    </div>\r\n  </div>\r\n</footer>\r\n"
-
-/***/ }),
-
-/***/ "./src/app/components/footer/footer.component.scss":
-/***/ (function(module, exports, __webpack_require__) {
-
-exports = module.exports = __webpack_require__("./node_modules/css-loader/lib/css-base.js")(false);
-// imports
-
-
-// module
-exports.push([module.i, "", ""]);
-
-// exports
-
-
-/*** EXPORTS FROM exports-loader ***/
-module.exports = module.exports.toString();
-
-/***/ }),
-
-/***/ "./src/app/components/footer/footer.component.ts":
-/***/ (function(module, __webpack_exports__, __webpack_require__) {
-
-"use strict";
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__("./node_modules/@angular/core/@angular/core.es5.js");
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return FooterComponent; });
-var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
-    var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
-    if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
-    else for (var i = decorators.length - 1; i >= 0; i--) if (d = decorators[i]) r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;
-    return c > 3 && r && Object.defineProperty(target, key, r), r;
-};
-var __metadata = (this && this.__metadata) || function (k, v) {
-    if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
-};
-
-var FooterComponent = (function () {
-    function FooterComponent() {
-    }
-    FooterComponent.prototype.ngOnInit = function () {
-    };
-    return FooterComponent;
-}());
-FooterComponent = __decorate([
-    __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_0__angular_core__["Component"])({
-        selector: 'app-footer',
-        template: __webpack_require__("./src/app/components/footer/footer.component.html"),
-        styles: [__webpack_require__("./src/app/components/footer/footer.component.scss")]
-    }),
-    __metadata("design:paramtypes", [])
-], FooterComponent);
-
-//# sourceMappingURL=footer.component.js.map
 
 /***/ }),
 
@@ -1963,8 +1897,9 @@ var AuthService = (function () {
     function AuthService(http) {
         this.http = http;
         this.userData = new __WEBPACK_IMPORTED_MODULE_4_rxjs__["BehaviorSubject"]({});
-        this.isDev = true; // Change to false before deployment
+        this.isDev = false;
     }
+    // Register
     AuthService.prototype.registerUser = function (user) {
         var headers = new __WEBPACK_IMPORTED_MODULE_1__angular_http__["Headers"]();
         headers.append('Content-Type', 'application/json');
@@ -1972,20 +1907,12 @@ var AuthService = (function () {
         return this.http.post(ep, user, { headers: headers })
             .map(function (res) { return res.json(); });
     };
+    // Authenticate
     AuthService.prototype.authenticateUser = function (user) {
         var headers = new __WEBPACK_IMPORTED_MODULE_1__angular_http__["Headers"]();
         headers.append('Content-Type', 'application/json');
         var ep = this.prepEndpoint('users/authenticate');
         return this.http.post(ep, user, { headers: headers })
-            .map(function (res) { return res.json(); });
-    };
-    AuthService.prototype.getProfile = function () {
-        var headers = new __WEBPACK_IMPORTED_MODULE_1__angular_http__["Headers"]();
-        this.loadToken();
-        headers.append('Authorization', this.authToken);
-        headers.append('Content-Type', 'application/json');
-        var ep = this.prepEndpoint('users/profile');
-        return this.http.get(ep, { headers: headers })
             .map(function (res) { return res.json(); });
     };
     AuthService.prototype.storeUserData = function (token, user) {
@@ -2107,9 +2034,9 @@ var __metadata = (this && this.__metadata) || function (k, v) {
 var UsersService = (function () {
     function UsersService(http) {
         this.http = http;
-        this.isDev = true; // Change to false before deployment
+        this.isDev = true;
     }
-    //Get All Users
+    // Get All Users
     UsersService.prototype.getUsers = function () {
         var headers = new __WEBPACK_IMPORTED_MODULE_1__angular_http__["Headers"]();
         this.loadToken();
@@ -2119,6 +2046,7 @@ var UsersService = (function () {
         return this.http.get(ep, { headers: headers })
             .map(function (res) { return res.json(); });
     };
+    // Get Single User
     UsersService.prototype.getUser = function (username) {
         var headers = new __WEBPACK_IMPORTED_MODULE_1__angular_http__["Headers"]();
         this.loadToken();
@@ -2128,7 +2056,7 @@ var UsersService = (function () {
         return this.http.get(ep, { headers: headers })
             .map(function (res) { return res.json(); });
     };
-    //Add New Post
+    // Add New Post
     UsersService.prototype.addPost = function (post) {
         var username = post.authorUsername;
         var headers = new __WEBPACK_IMPORTED_MODULE_1__angular_http__["Headers"]();
@@ -2137,7 +2065,7 @@ var UsersService = (function () {
         return this.http.post(ep, post, { headers: headers })
             .map(function (res) { return res.json(); });
     };
-    //Add new comment
+    // Add New Comment
     UsersService.prototype.addComment = function (comment) {
         var headers = new __WEBPACK_IMPORTED_MODULE_1__angular_http__["Headers"]();
         headers.append('Content-Type', 'application/json');
@@ -2145,8 +2073,8 @@ var UsersService = (function () {
         return this.http.post(ep, comment, { headers: headers })
             .map(function (res) { return res.json(); });
     };
-    //Add comment from post directly
-    //TODO better, dry solution
+    // Add Comment From "Post" view
+    // TODO better, dry solution
     UsersService.prototype.addCommentFromPost = function (comment) {
         var username = comment.postAuthorUsername;
         var postId = comment.postId;
@@ -2156,7 +2084,7 @@ var UsersService = (function () {
         return this.http.post(ep, comment, { headers: headers })
             .map(function (res) { return res.json(); });
     };
-    //Add new comment
+    // Add New Like
     UsersService.prototype.addLike = function (like) {
         var headers = new __WEBPACK_IMPORTED_MODULE_1__angular_http__["Headers"]();
         headers.append('Content-Type', 'application/json');
@@ -2164,8 +2092,8 @@ var UsersService = (function () {
         return this.http.post(ep, like, { headers: headers })
             .map(function (res) { return res.json(); });
     };
-    //Add like from post directly
-    //TODO better, dry solution
+    // Add like from post directly
+    // TODO better, dry solution
     UsersService.prototype.addLikeFromPost = function (like) {
         var username = like.postAuthorUsername;
         var postId = like.postId;

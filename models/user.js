@@ -75,8 +75,8 @@ module.exports.addUser = function(newUser, callback) {
   });
 }
 
+// "Post" Methods
 
-// POST (ARTICLE) METHODS
 module.exports.getUserPostById = function(id, callback) {
   User.posts.findById(id, callback);
 }

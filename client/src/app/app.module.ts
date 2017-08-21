@@ -27,12 +27,11 @@ import { UserDataService } from './components/user-profile/user-data.service';
 import { UserPostDialogComponent } from './components/user-profile/user-post-dialog/user-post-dialog.component';
 import { WallCardComponent } from './components/wall/wall-card/wall-card.component';
 import { ExploreCardComponent } from './components/explore/explore-card/explore-card.component';
-import { FooterComponent } from './components/footer/footer.component';
 
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { NoopAnimationsModule } from '@angular/platform-browser/animations';
 
-//angular filestack
+// Filestack
 import { FilePickerModule } from 'angular-file-picker';
 
 // Material Design
@@ -41,7 +40,7 @@ import { MdSidenavModule } from '@angular/material';
 import { MdMenuModule } from '@angular/material';
 import { MdToolbarModule} from '@angular/material';
 import { MdDialogModule, MdDialogRef } from '@angular/material';
-//materialize
+// Materialize
 import { MaterializeModule } from 'angular2-materialize';
 import { GroupComponent } from './components/shared/group/group.component';
 import { CommentComponent } from './components/shared/comments/comment/comment.component';
@@ -52,17 +51,11 @@ const appRoutes: Routes = [
   { path: 'register', component: RegisterComponent },
   { path: 'login', component: LoginComponent },
   { path: 'home', component: HomeComponent },
-
   { path: 'wall', component: WallComponent, canActivate: [AuthGuard]  },
   { path: 'explore', component: ExploreComponent, canActivate: [AuthGuard]  },
-  // { path: 'profile/:id', component: UserProfileComponent },
   { path: ':username', component: UserProfileComponent, canActivate: [AuthGuard]  },
   { path: 'settings/:id', component: SettingsComponent, canActivate: [AuthGuard]  },
   { path: 'post/:username/:postId', component: UserPostComponent, canActivate: [AuthGuard]  },
-  //  { path: 'profile', component: UserProfileComponent },
-
-  // { path: 'dashboard', component: DashboardComponent, canActivate: [AuthGuard] },
-  // { path: 'profile', component: ProfileComponent, canActivate: [AuthGuard] }
 ]
 
 @NgModule({
@@ -82,7 +75,6 @@ const appRoutes: Routes = [
     UserPostDialogComponent,
     WallCardComponent,
     ExploreCardComponent,
-    FooterComponent,
     GroupComponent,
     CommentComponent,
     UserPostComponent
