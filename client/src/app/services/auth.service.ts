@@ -12,7 +12,7 @@ export class AuthService {
   private userData = new BehaviorSubject({});
 
   constructor(private http: Http) {
-    this.isDev = false; 
+    this.isDev = false;
   }
 
    // Register
@@ -56,7 +56,7 @@ export class AuthService {
   }
 
   prepEndpoint(ep) {
-    if (this.isDev) {
+    if (!this.isDev) {
       return ep;
     } else {
       return 'http://localhost:8080/' + ep;

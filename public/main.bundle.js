@@ -1934,7 +1934,7 @@ var AuthService = (function () {
         localStorage.clear();
     };
     AuthService.prototype.prepEndpoint = function (ep) {
-        if (this.isDev) {
+        if (!this.isDev) {
             return ep;
         }
         else {
